@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MathQuiz",
+    "\\MathQuiz\\Properties"
   ],
+  "SelectedNode": "\\MathQuiz\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
