@@ -23,5 +23,11 @@ namespace MegaDesk_Wood
             viewMainMenu.Show();
             Close();
         }
+
+        private void ViewAllQuotes_Load(object sender, EventArgs e)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Customer Name",typeof(string));
+        }
     }
 }

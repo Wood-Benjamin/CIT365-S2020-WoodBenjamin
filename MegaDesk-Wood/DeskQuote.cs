@@ -24,5 +24,13 @@ namespace MegaDesk_Wood
         public const int BASESURFACE = 1000;
         public const int OVERSURFACE = 1;
         public const int LARGESURFACE = 2000;
+
+        public void GetRushOrder()
+        {
+            //Create a GetRushOrder method within
+            //the DeskQuote class to handle the population
+            //of a member variable that holds a two  dimension
+            //array that encases the logic in a try catch block.
+        }
     }
 }
