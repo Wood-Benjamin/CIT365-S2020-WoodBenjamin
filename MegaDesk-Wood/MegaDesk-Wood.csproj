@@ -121,5 +121,8 @@
   <ItemGroup>
     <None Include="images\MegaDeskMain.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="doc\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,13 @@ namespace MegaDesk_Wood
         {
             DataTable table = new DataTable();
             table.Columns.Add("Customer Name",typeof(string));
+            table.Columns.Add("Quote Date", typeof(DateTime));
+            table.Columns.Add("Desk Material", typeof(string));
+            table.Columns.Add("Width", typeof(int));
+            table.Columns.Add("Depth", typeof(int));
+            table.Columns.Add("Drawers", typeof(int));
+            table.Columns.Add("Rush Order", typeof(string));
+            table.Columns.Add("Sub Total", typeof(int));
         }
     }
 }
