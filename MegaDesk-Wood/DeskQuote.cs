@@ -38,11 +38,15 @@ namespace MegaDesk_Wood
         {
             List<DeskQuote> newQuote = new List<DeskQuote>();
             using (StreamReader jsonReader = new StreamReader(@"../../docs/quotes.json"))
-            {
-                newQuote.AddRange(JsonConvert.DeserializeObject<List<DeskQuote>>(jsonReader.ReadToEnd()));
-            }               
+                NewMethod(newQuote, jsonReader);
             return newQuote;
         }
+
+        private static void NewMethod(List<DeskQuote> newQuote, StreamReader jsonReader)
+        {
+            newQuote.AddRange(JsonConvert.DeserializeObject<List<DeskQuote>>(value: jsonReader.ReadToEnd()));
+        }
+
         public void WriteQuotes(List<DeskQuote> listQuotes)
         {
             StreamWriter jsonWriter = File.CreateText(@"../../docs/quotes.json");
