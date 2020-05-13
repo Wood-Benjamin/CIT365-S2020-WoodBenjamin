@@ -37,7 +37,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(633, 340);
+            this.btnClose.Location = new System.Drawing.Point(1087, 425);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 30);
             this.btnClose.TabIndex = 1;
@@ -48,9 +48,9 @@
             // grpViewAllQuotes
             // 
             this.grpViewAllQuotes.Controls.Add(this.dataGridViewAllQuotes);
-            this.grpViewAllQuotes.Location = new System.Drawing.Point(40, 22);
+            this.grpViewAllQuotes.Location = new System.Drawing.Point(12, 12);
             this.grpViewAllQuotes.Name = "grpViewAllQuotes";
-            this.grpViewAllQuotes.Size = new System.Drawing.Size(643, 298);
+            this.grpViewAllQuotes.Size = new System.Drawing.Size(1177, 407);
             this.grpViewAllQuotes.TabIndex = 2;
             this.grpViewAllQuotes.TabStop = false;
             this.grpViewAllQuotes.Text = "View All Quotes";
@@ -63,14 +63,14 @@
             this.dataGridViewAllQuotes.Name = "dataGridViewAllQuotes";
             this.dataGridViewAllQuotes.RowHeadersWidth = 51;
             this.dataGridViewAllQuotes.RowTemplate.Height = 24;
-            this.dataGridViewAllQuotes.Size = new System.Drawing.Size(610, 243);
+            this.dataGridViewAllQuotes.Size = new System.Drawing.Size(1151, 366);
             this.dataGridViewAllQuotes.TabIndex = 0;
             // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 382);
+            this.ClientSize = new System.Drawing.Size(1199, 464);
             this.Controls.Add(this.grpViewAllQuotes);
             this.Controls.Add(this.btnClose);
             this.Name = "ViewAllQuotes";

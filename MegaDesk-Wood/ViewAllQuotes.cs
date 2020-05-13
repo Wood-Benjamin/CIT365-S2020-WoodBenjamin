@@ -35,6 +35,10 @@ namespace MegaDesk_Wood
             table.Columns.Add("Drawers", typeof(int));
             table.Columns.Add("Rush Order", typeof(string));
             table.Columns.Add("Sub Total", typeof(int));
+
+            table.Rows.Add("Ben Wood", "13 May 2020", "Laminate", 30, 30, 5, "5 Days", 590);
+
+            dataGridViewAllQuotes.DataSource = table;
         }
     }
 }
