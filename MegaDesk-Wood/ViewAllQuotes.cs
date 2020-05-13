@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace MegaDesk_Wood
         private void ViewAllQuotes_Load(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
-            table.Columns.Add("Customer Name",typeof(string));
+            table.Columns.Add("Customer Name", typeof(string));
             table.Columns.Add("Quote Date", typeof(DateTime));
             table.Columns.Add("Desk Material", typeof(string));
             table.Columns.Add("Width", typeof(int));
@@ -36,9 +37,31 @@ namespace MegaDesk_Wood
             table.Columns.Add("Rush Order", typeof(string));
             table.Columns.Add("Sub Total", typeof(int));
 
-            table.Rows.Add("Ben Wood", "13 May 2020", "Laminate", 30, 30, 5, "5 Days", 590);
+            //table.Rows.Add("Ben Wood", "13 May 2020", "Laminate", 30, 30, 5, "5 Days", 590);
 
-            dataGridViewAllQuotes.DataSource = table;
+            
+
+            StreamReader jsonReader = new StreamReader(@"../../docs/quotes.json");
+            //dataGridViewAllQuotes.Rows.Clear();
+
+            try
+            {
+                while (!jsonReader.EndOfStream)
+                {
+                    string quote = jsonReader.ReadLine();
+                    string[] quoteRows = quote.Split(',');
+                    table.Rows.Add(quoteRows);
+                    dataGridViewAllQuotes.DataSource = table;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Error: " + ea.Message);
+            }
+            finally
+            {
+                jsonReader.Close();
+            }
         }
     }
 }

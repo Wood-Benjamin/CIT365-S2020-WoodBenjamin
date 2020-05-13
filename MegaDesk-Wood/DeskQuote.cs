@@ -1,6 +1,8 @@
 ﻿using Microsoft.SqlServer.Server;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +33,21 @@ namespace MegaDesk_Wood
             //the DeskQuote class to handle the population
             //of a member variable that holds a two  dimension
             //array that encases the logic in a try catch block.
+        }
+        public List<DeskQuote> ReadQuotes()
+        {
+            List<DeskQuote> newQuote = new List<DeskQuote>();
+            using (StreamReader jsonReader = new StreamReader(@"../../docs/quotes.json"))
+            {
+                newQuote.AddRange(JsonConvert.DeserializeObject<List<DeskQuote>>(jsonReader.ReadToEnd()));
+            }               
+            return newQuote;
+        }
+        public void WriteQuotes(List<DeskQuote> listQuotes)
+        {
+            StreamWriter jsonWriter = File.CreateText(@"../../docs/quotes.json");
+            JsonSerializer jsonSerial = new JsonSerializer();
+            jsonSerial.Serialize(jsonWriter, listQuotes);
         }
     }
 }

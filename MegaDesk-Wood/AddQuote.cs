@@ -384,5 +384,48 @@ namespace MegaDesk_Wood
            // this.Hide();
            // viewQuote.Show();
         }
+
+        private void btnSaveQuote_Click(object sender, EventArgs e)
+        {
+            DeskQuote deskQuote = new DeskQuote();
+            List<DeskQuote> newQuote = deskQuote.ReadQuotes();
+            if (txtCustName.TextLength == 0)
+            {
+                MessageBox.Show("Your Quote requires a Customer Name.");
+            }
+            else
+            {
+                Desk desk = new Desk()
+                {
+                    Material = cmbDeskMaterial.Text,
+                    Width = int.Parse(numWidth.Text),
+                    Depth = int.Parse(numDepth.Text),
+                    Drawers = int.Parse(numDrawers.Text),
+                    Rush = rushOrder
+                };
+                DeskQuote dQ = new DeskQuote()
+                {
+                    CustomerName = txtCustName.Text,
+                    QuoteDate = DateTime.Parse(lblQuoteDate.Text),
+                    desk = desk,
+                    QuoteTotal = CalQuoteTotal()
+                };
+
+                newQuote.Add(dQ);
+                deskQuote.WriteQuotes(newQuote);
+
+                ViewAllQuotes viewQuotes = new ViewAllQuotes();
+                this.Hide();
+                viewQuotes.Show();
+            }
+        }
+
+        private void btnSaveQuote_Validating(object sender, CancelEventArgs e)
+        {
+           // if (lblCustName.Text != null)
+          //  {
+          //      btnSaveQuote_Click();
+           // }
+        }
     }
 }

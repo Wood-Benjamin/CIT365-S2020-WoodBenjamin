@@ -87,6 +87,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.btnSaveQuote = new System.Windows.Forms.Button();
             this.grpSelectMaterial.SuspendLayout();
             this.grpCalArea.SuspendLayout();
             this.grpQuoteInfo.SuspendLayout();
@@ -688,11 +689,23 @@
             this.label25.Text = "Base Cost:";
             this.label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // btnSaveQuote
+            // 
+            this.btnSaveQuote.Location = new System.Drawing.Point(34, 650);
+            this.btnSaveQuote.Name = "btnSaveQuote";
+            this.btnSaveQuote.Size = new System.Drawing.Size(228, 42);
+            this.btnSaveQuote.TabIndex = 14;
+            this.btnSaveQuote.Text = "Save Quote (**Test**, BW)";
+            this.btnSaveQuote.UseVisualStyleBackColor = true;
+            this.btnSaveQuote.Click += new System.EventHandler(this.btnSaveQuote_Click);
+            this.btnSaveQuote.Validating += new System.ComponentModel.CancelEventHandler(this.btnSaveQuote_Validating);
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 705);
+            this.Controls.Add(this.btnSaveQuote);
             this.Controls.Add(this.grpQuoteSummary);
             this.Controls.Add(this.btnSubmitDisplayQuote);
             this.Controls.Add(this.grpRushDetails);
@@ -781,5 +794,6 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnSaveQuote;
     }
 }
