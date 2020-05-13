@@ -377,5 +377,12 @@ namespace MegaDesk_Wood
         {
             QuoteRefresh();
         }
+
+        private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
+        {
+            //DisplayQuote viewQuote = new DisplayQuote(desk, quote);
+           // this.Hide();
+           // viewQuote.Show();
+        }
     }
 }

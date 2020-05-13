@@ -49,6 +49,7 @@
             this.numDrawers = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.grpRushDays = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.rd3Days = new System.Windows.Forms.RadioButton();
             this.rd5Days = new System.Windows.Forms.RadioButton();
             this.rd7Days = new System.Windows.Forms.RadioButton();
@@ -64,14 +65,16 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.grpRushDetails = new System.Windows.Forms.GroupBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubmitDisplayQuote = new System.Windows.Forms.Button();
             this.grpQuoteSummary = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -84,9 +87,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.grpSelectMaterial.SuspendLayout();
             this.grpCalArea.SuspendLayout();
             this.grpQuoteInfo.SuspendLayout();
@@ -307,6 +307,15 @@
             this.grpRushDays.TabStop = false;
             this.grpRushDays.Text = "How Soon?";
             // 
+            // label38
+            // 
+            this.label38.Location = new System.Drawing.Point(6, 154);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(206, 24);
+            this.label38.TabIndex = 21;
+            this.label38.Text = "* See Additional Rush Cost";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // rd3Days
             // 
             this.rd3Days.AutoSize = true;
@@ -468,6 +477,14 @@
             this.grpRushDetails.TabStop = false;
             this.grpRushDetails.Text = "* Additional Rush Costs";
             // 
+            // label37
+            // 
+            this.label37.Location = new System.Drawing.Point(8, 69);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(320, 19);
+            this.label37.TabIndex = 14;
+            this.label37.Text = "----------------------------------------------------------------------------";
+            // 
             // label21
             // 
             this.label21.Location = new System.Drawing.Point(266, 156);
@@ -516,14 +533,15 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "$70";
             // 
-            // button1
+            // btnSubmitDisplayQuote
             // 
-            this.button1.Location = new System.Drawing.Point(507, 652);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSubmitDisplayQuote.Location = new System.Drawing.Point(457, 652);
+            this.btnSubmitDisplayQuote.Name = "btnSubmitDisplayQuote";
+            this.btnSubmitDisplayQuote.Size = new System.Drawing.Size(141, 30);
+            this.btnSubmitDisplayQuote.TabIndex = 6;
+            this.btnSubmitDisplayQuote.Text = "Display Quote";
+            this.btnSubmitDisplayQuote.UseVisualStyleBackColor = true;
+            this.btnSubmitDisplayQuote.Click += new System.EventHandler(this.btnSubmitDisplayQuote_Click);
             // 
             // grpQuoteSummary
             // 
@@ -547,6 +565,14 @@
             this.grpQuoteSummary.TabIndex = 13;
             this.grpQuoteSummary.TabStop = false;
             this.grpQuoteSummary.Text = "Quote Summary";
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(7, 281);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(320, 19);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "----------------------------------------------------------------------------";
             // 
             // label36
             // 
@@ -662,38 +688,13 @@
             this.label25.Text = "Base Cost:";
             this.label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label37
-            // 
-            this.label37.Location = new System.Drawing.Point(8, 69);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(320, 19);
-            this.label37.TabIndex = 14;
-            this.label37.Text = "----------------------------------------------------------------------------";
-            // 
-            // label38
-            // 
-            this.label38.Location = new System.Drawing.Point(6, 154);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(206, 24);
-            this.label38.TabIndex = 21;
-            this.label38.Text = "* See Additional Rush Cost";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(7, 281);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(320, 19);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "----------------------------------------------------------------------------";
-            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 705);
             this.Controls.Add(this.grpQuoteSummary);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSubmitDisplayQuote);
             this.Controls.Add(this.grpRushDetails);
             this.Controls.Add(this.grpRushDays);
             this.Controls.Add(this.grpDrawers);
@@ -760,7 +761,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSubmitDisplayQuote;
         private System.Windows.Forms.GroupBox grpQuoteSummary;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;

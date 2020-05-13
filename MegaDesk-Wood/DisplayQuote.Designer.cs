@@ -33,7 +33,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(633, 340);
+            this.btnClose.Location = new System.Drawing.Point(649, 670);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 30);
             this.btnClose.TabIndex = 1;
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 382);
+            this.ClientSize = new System.Drawing.Size(752, 712);
             this.Controls.Add(this.btnClose);
             this.Name = "DisplayQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
