@@ -698,7 +698,6 @@
             this.btnSaveQuote.Text = "Save Quote (**Test**, BW)";
             this.btnSaveQuote.UseVisualStyleBackColor = true;
             this.btnSaveQuote.Click += new System.EventHandler(this.btnSaveQuote_Click);
-            this.btnSaveQuote.Validating += new System.ComponentModel.CancelEventHandler(this.btnSaveQuote_Validating);
             // 
             // AddQuote
             // 

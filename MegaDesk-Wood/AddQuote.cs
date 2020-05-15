@@ -413,23 +413,30 @@ namespace MegaDesk_Wood
                     QuoteTotal = CalQuoteTotal()
                 };
 
+                // string jsonFile = JsonConvert.SerializeObject(quote);
+
                 StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
                 jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
                 jsonFile.Close();
+
+                /*
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Converters.Add(new JavaScriptDateTimeConverter());
+                serializer.NullValueHandling = NullValueHandling.Ignore;
+
+                using (StreamWriter sw = new StreamWriter(@"c:\json.txt"))
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    serializer.Serialize(writer, product);
+                    // {"ExpiryDate":new Date(1230375600000),"Price":0}
+                }
+                */
 
                 ViewAllQuotes viewViewAllQuotes = new ViewAllQuotes();
                 viewViewAllQuotes.Tag = this;
                 viewViewAllQuotes.Show(this);
                 Hide();
             }
-        }
-
-        private void btnSaveQuote_Validating(object sender, CancelEventArgs e)
-        {
-           // if (lblCustName.Text != null)
-          //  {
-          //      btnSaveQuote_Click();
-           // }
         }
     }
 }

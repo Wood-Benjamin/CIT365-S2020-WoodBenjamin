@@ -51,7 +51,7 @@ namespace MegaDesk_Wood
             DialogResult result = MessageBox.Show(message, title, buttons, icon);
             if (result == DialogResult.OK)
             {
-                Environment.Exit(1);
+                Application.Exit();
             }
         }
 
