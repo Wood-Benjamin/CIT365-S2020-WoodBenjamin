@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,18 +37,18 @@ namespace MegaDesk_Wood
             table.Columns.Add("Drawers", typeof(int));
             table.Columns.Add("Rush Order", typeof(string));
             table.Columns.Add("Sub Total", typeof(int));
-
-            //table.Rows.Add("Ben Wood", "13 May 2020", "Laminate", 30, 30, 5, "5 Days", 590);
-
             
+            /*
 
-            StreamReader jsonReader = new StreamReader(@"../../docs/quotes.json");
-            //dataGridViewAllQuotes.Rows.Clear();
 
             try
             {
                 while (!jsonReader.EndOfStream)
                 {
+                    string tableJson = JsonConvert.SerializeObject(table);
+                    File.WriteAllText(@"../../docs/quotes.json", tableJson);
+
+                
                     string quote = jsonReader.ReadLine();
                     string[] quoteRows = quote.Split(',');
                     table.Rows.Add(quoteRows);
@@ -61,7 +62,7 @@ namespace MegaDesk_Wood
             finally
             {
                 jsonReader.Close();
-            }
+            } */
         }
     }
 }

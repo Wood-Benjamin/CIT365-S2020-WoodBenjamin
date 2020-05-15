@@ -34,24 +34,27 @@ namespace MegaDesk_Wood
             //of a member variable that holds a two  dimension
             //array that encases the logic in a try catch block.
         }
-        public List<DeskQuote> ReadQuotes()
-        {
-            List<DeskQuote> newQuote = new List<DeskQuote>();
-            using (StreamReader jsonReader = new StreamReader(@"../../docs/quotes.json"))
-                NewMethod(newQuote, jsonReader);
-            return newQuote;
+        public void ReadQuotes()
+        { /*
+            var strResultJson = String.Empty;
+            strResultJson = File.ReadAllText(@"../../docs/quotes.json"));
+            //List<DeskQuote> newQuote = new List<DeskQuote>();
+            //using (StreamReader jsonReader = new StreamReader(@"../../docs/quotes.json"))
+                //NewMethod(newQuote, jsonReader);
+            //return newQuote; */
         }
 
         private static void NewMethod(List<DeskQuote> newQuote, StreamReader jsonReader)
         {
-            newQuote.AddRange(JsonConvert.DeserializeObject<List<DeskQuote>>(value: jsonReader.ReadToEnd()));
+          //  newQuote.AddRange(JsonConvert.DeserializeObject<List<DeskQuote>>(value: jsonReader.ReadToEnd()));
         }
 
         public void WriteQuotes(List<DeskQuote> listQuotes)
-        {
-            StreamWriter jsonWriter = File.CreateText(@"../../docs/quotes.json");
+        {/*
+            StreamWriter jsonWriter = File.WriteAllText(@"../../docs/quotes.json");
             JsonSerializer jsonSerial = new JsonSerializer();
             jsonSerial.Serialize(jsonWriter, listQuotes);
+            */
         }
     }
 }

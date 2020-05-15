@@ -1,4 +1,5 @@
 ﻿using MegaDesk_Wood;
+using Newtonsoft.Json;
 using System;
 using System.CodeDom;
 using System.Collections;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -388,7 +390,7 @@ namespace MegaDesk_Wood
         private void btnSaveQuote_Click(object sender, EventArgs e)
         {
             DeskQuote deskQuote = new DeskQuote();
-            List<DeskQuote> newQuote = deskQuote.ReadQuotes();
+            //List<DeskQuote> newQuote = deskQuote.ReadQuotes();
             if (txtCustName.TextLength == 0)
             {
                 MessageBox.Show("Your Quote requires a Customer Name.");
@@ -411,8 +413,8 @@ namespace MegaDesk_Wood
                     QuoteTotal = CalQuoteTotal()
                 };
 
-                newQuote.Add(dQ);
-                deskQuote.WriteQuotes(newQuote);
+                string newQuote = JsonConvert.SerializeObject(dQ);
+                File.WriteAllText(@"../../docs/quotes.json", newQuote);
 
                 ViewAllQuotes viewQuotes = new ViewAllQuotes();
                 this.Hide();
