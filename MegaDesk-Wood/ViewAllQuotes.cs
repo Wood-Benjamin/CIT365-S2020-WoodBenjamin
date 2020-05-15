@@ -19,13 +19,6 @@ namespace MegaDesk_Wood
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            MainMenu viewMainMenu = (MainMenu)Tag;
-            viewMainMenu.Show();
-            Close();
-        }
-
         private void ViewAllQuotes_Load(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
@@ -38,31 +31,30 @@ namespace MegaDesk_Wood
             table.Columns.Add("Rush Order", typeof(string));
             table.Columns.Add("Sub Total", typeof(int));
             
-            /*
-
-
             try
             {
-                while (!jsonReader.EndOfStream)
+                StreamReader jsonFile = new StreamReader(@"../../docs/quotes.json");
+                while (!jsonFile.EndOfStream)
                 {
-                    string tableJson = JsonConvert.SerializeObject(table);
-                    File.WriteAllText(@"../../docs/quotes.json", tableJson);
-
-                
-                    string quote = jsonReader.ReadLine();
-                    string[] quoteRows = quote.Split(',');
-                    table.Rows.Add(quoteRows);
-                    dataGridViewAllQuotes.DataSource = table;
+                    string[] col = jsonFile.ReadLine().Split(',');
+                    table.Rows.Add(col[0], col[1], col[2], col[3], col[4], col[5], col[6], col[7]);
                 }
+                dataGridViewAllQuotes.DataSource = table;
+                jsonFile.Close();
             }
             catch (Exception ea)
             {
                 MessageBox.Show("Error: " + ea.Message);
+                Close();
             }
-            finally
-            {
-                jsonReader.Close();
-            } */
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            MainMenu viewMainMenu = new MainMenu();
+            viewMainMenu.Tag = this;
+            viewMainMenu.Show(this);
+            Hide();
         }
     }
 }

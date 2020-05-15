@@ -405,7 +405,7 @@ namespace MegaDesk_Wood
                     Drawers = int.Parse(numDrawers.Text),
                     Rush = rushOrder
                 };
-                DeskQuote dQ = new DeskQuote()
+                DeskQuote quote = new DeskQuote()
                 {
                     CustomerName = txtCustName.Text,
                     QuoteDate = DateTime.Parse(lblQuoteDate.Text),
@@ -413,12 +413,14 @@ namespace MegaDesk_Wood
                     QuoteTotal = CalQuoteTotal()
                 };
 
-                string newQuote = JsonConvert.SerializeObject(dQ);
-                File.WriteAllText(@"../../docs/quotes.json", newQuote);
+                StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
+                jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
+                jsonFile.Close();
 
-                ViewAllQuotes viewQuotes = new ViewAllQuotes();
-                this.Hide();
-                viewQuotes.Show();
+                ViewAllQuotes viewViewAllQuotes = new ViewAllQuotes();
+                viewViewAllQuotes.Tag = this;
+                viewViewAllQuotes.Show(this);
+                Hide();
             }
         }
 

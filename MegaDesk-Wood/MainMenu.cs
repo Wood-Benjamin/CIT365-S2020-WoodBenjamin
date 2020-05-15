@@ -15,6 +15,7 @@ namespace MegaDesk_Wood
         public MainMenu()
         {
             InitializeComponent();
+
         }
 
         private void btnAddNewQuote_Click(object sender, EventArgs e)
@@ -43,7 +44,15 @@ namespace MegaDesk_Wood
 
         private void btnExitMainMenu_Click(object sender, EventArgs e)
         {
-            Close();
+            string message = "Do you want to close MegaDesk?";
+            string title = "Close MegaDesk";
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            MessageBoxIcon icon = MessageBoxIcon.Information;
+            DialogResult result = MessageBox.Show(message, title, buttons, icon);
+            if (result == DialogResult.OK)
+            {
+                Environment.Exit(1);
+            }
         }
 
         
