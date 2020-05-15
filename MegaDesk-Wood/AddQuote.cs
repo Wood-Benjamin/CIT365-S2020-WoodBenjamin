@@ -389,8 +389,8 @@ namespace MegaDesk_Wood
 
         private void btnSaveQuote_Click(object sender, EventArgs e)
         {
-            DeskQuote deskQuote = new DeskQuote();
-            //List<DeskQuote> newQuote = deskQuote.ReadQuotes();
+            // DeskQuote deskQuote = new DeskQuote();
+            // List<DeskQuote> newQuote = deskQuote.ReadQuotes();
             if (txtCustName.TextLength == 0)
             {
                 MessageBox.Show("Your Quote requires a Customer Name.");
@@ -413,11 +413,15 @@ namespace MegaDesk_Wood
                     QuoteTotal = CalQuoteTotal()
                 };
 
+                StreamWriter jsonFile = File.CreateText(@"../../docs/quotes.json");
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(jsonFile, quote);
+
                 // string jsonFile = JsonConvert.SerializeObject(quote);
 
-                StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
-                jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
-                jsonFile.Close();
+                // StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
+                // jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
+                // jsonFile.Close();
 
                 /*
                 JsonSerializer serializer = new JsonSerializer();
