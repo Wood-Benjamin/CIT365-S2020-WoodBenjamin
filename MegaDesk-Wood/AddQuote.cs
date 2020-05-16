@@ -445,6 +445,7 @@ namespace MegaDesk_Wood
                 viewViewAllQuotes.Tag = this;
                 viewViewAllQuotes.Show(this);
                 Hide();
+            //  Save
          
         }
     }
