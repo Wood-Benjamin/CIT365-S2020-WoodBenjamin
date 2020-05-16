@@ -389,41 +389,7 @@ namespace MegaDesk_Wood
 
         private void btnSaveQuote_Click(object sender, EventArgs e)
         {
-            /*
-            DeskQuote deskQuote = new DeskQuote();
-            //List<DeskQuote> newQuote = deskQuote.ReadQuotes();
-            if (txtCustName.TextLength == 0)
-            {
-                MessageBox.Show("Your Quote requires a Customer Name.");
-            }
-            else
-            {
-                Desk desk = new Desk()
-                {
-                    Material = cmbDeskMaterial.Text,
-                    Width = int.Parse(numWidth.Text),
-                    Depth = int.Parse(numDepth.Text),
-                    Drawers = int.Parse(numDrawers.Text),
-                    Rush = rushOrder
-                };
-                DeskQuote quote = new DeskQuote()
-                {
-                    CustomerName = txtCustName.Text,
-                    QuoteDate = DateTime.Parse(lblQuoteDate.Text),
-                    desk = desk,
-                    QuoteTotal = CalQuoteTotal()
-                };
-
-                // string jsonFile = JsonConvert.SerializeObject(quote);
-
-                StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
-                jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
-                jsonFile.Close();
-                */
-
-                
-                // DeskQuote deskQuote = new DeskQuote();
-                // List<DeskQuote> newQuote = deskQuote.ReadQuotes();
+           
                 if (txtCustName.TextLength == 0)
                 {
                     MessageBox.Show("Your Quote requires a Customer Name.");
@@ -431,25 +397,7 @@ namespace MegaDesk_Wood
                 else
                 {
                     List<NewQuote> newQuote = new List<NewQuote>();
-                /*
-               *newQuote.Add(new NewQuote() { SpecName = txtCustName.Text,
-                                                  SpecDate = lblQuoteDate.Text,
-                                                  SpecMaterial = cmbDeskMaterial.Text,
-                                                  SpecWidth = numWidth.Text,
-                                                  SpecDepth = numDepth.Text,
-                                                  SpecDrawers = numDrawers.Text,
-                                                  SpecRush = CalRushOrderCost().ToString(),
-                                                  SpecTotal = CalQuoteTotal().ToString()});
-
-              using (StreamWriter jsonFile = File.CreateText(@"../../docs/quotes.json"))
-              {
-                  JsonSerializer serializer = new JsonSerializer();
-                  serializer.Serialize(jsonFile, newQuote);
-                  jsonFile.Close();
-
-*/
-
-
+               
                 var filePath = @"../../docs/quotes.json";
                 var jsonData = System.IO.File.ReadAllText(filePath);
                 var quoteList = JsonConvert.DeserializeObject<List<NewQuote>>(jsonData)
@@ -465,12 +413,11 @@ namespace MegaDesk_Wood
                     SpecRush = CalRushOrderCost().ToString(),
                     SpecTotal = CalQuoteTotal().ToString()
                 });
+
                 jsonData = JsonConvert.SerializeObject(quoteList);
-                System.IO.File.WriteAllText(filePath, jsonData);
+                System.IO.File.WriteAllText(filePath, jsonData);  
                 
                 }
-
-        
 
                 ViewAllQuotes viewViewAllQuotes = new ViewAllQuotes();
                 viewViewAllQuotes.Tag = this;
