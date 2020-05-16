@@ -21,6 +21,7 @@ namespace MegaDesk_Wood
         Desk desk = new Desk();
         public List<string> listMaterial = new List<string>();
         int rushOrder;
+        int SurfaceArea;
         public AddQuote()
         {
             InitializeComponent();
@@ -52,28 +53,28 @@ namespace MegaDesk_Wood
         private void cmbDeskMaterial_SelectedIndexChanged(object sender, EventArgs e)
         {
             NewDesk();
-            CalMaterialCost();
+            //CalMaterialCost();This is done in the quote refresh method
             QuoteRefresh();
         }
 
         private void numWidth_TextChanged(object sender, EventArgs e)
         {
-            CalSurfaceAreaCost();
+            //CalSurfaceAreaCost();This is done in the quote refresh method
             NewDesk();
             QuoteRefresh();
         }
 
         private void numDepth_TextChanged(object sender, EventArgs e)
         {
-            CalSurfaceAreaCost();
+            //CalSurfaceAreaCost();This is done in the quote refresh method
             NewDesk();
             QuoteRefresh();
         }
 
         private void numDrawers_TextChanged(object sender, EventArgs e)
         {
-            CalDrawerCost();
-            NewDesk();
+            //CalDrawerCost(); This is done in the quote refresh method
+            NewDesk();//TT need this to update desk to get quote
             QuoteRefresh();
         }
         public Desk NewDesk()
@@ -85,6 +86,7 @@ namespace MegaDesk_Wood
             desk.Width = width;
             desk.Depth = depth;
             desk.Drawers = drawers;
+            //TT==This isn't being set in Desk because constructor is called before selected
             desk.Rush = rushOrder;
             desk.Material = cmbDeskMaterial.Text;
 
@@ -382,65 +384,68 @@ namespace MegaDesk_Wood
 
         private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
         {
-            //DisplayQuote viewQuote = new DisplayQuote(desk, quote);
-           // this.Hide();
-           // viewQuote.Show();
+            Desk desk = new Desk()
+            {
+                Material = cmbDeskMaterial.Text,
+                Width = int.Parse(numWidth.Text),
+                Depth = int.Parse(numDepth.Text),
+                Drawers = int.Parse(numDrawers.Text),
+                Rush = rushOrder
+            };
+            DeskQuote quote = new DeskQuote()
+            {
+                CustomerName = txtCustName.Text,
+                QuoteDate = DateTime.Parse(lblQuoteDate.Text),
+                desk = desk,
+                QuoteTotal = CalQuoteTotal(),
+                MaterialCost = CalMaterialCost(),
+                SurfaceAreaCost = CalSurfaceAreaCost(),
+                DrawerCost = CalDrawerCost(),
+                RushCost = CalRushOrderCost()
+        };
+
+            DisplayQuote viewQuote = new DisplayQuote(desk, quote);
+             this.Hide();
+             viewQuote.Show();
         }
 
         private void btnSaveQuote_Click(object sender, EventArgs e)
         {
-            // DeskQuote deskQuote = new DeskQuote();
-            // List<DeskQuote> newQuote = deskQuote.ReadQuotes();
-            if (txtCustName.TextLength == 0)
-            {
-                MessageBox.Show("Your Quote requires a Customer Name.");
-            }
-            else
-            {
-                Desk desk = new Desk()
+           
+                if (txtCustName.TextLength == 0)
                 {
-                    Material = cmbDeskMaterial.Text,
-                    Width = int.Parse(numWidth.Text),
-                    Depth = int.Parse(numDepth.Text),
-                    Drawers = int.Parse(numDrawers.Text),
-                    Rush = rushOrder
-                };
-                DeskQuote quote = new DeskQuote()
-                {
-                    CustomerName = txtCustName.Text,
-                    QuoteDate = DateTime.Parse(lblQuoteDate.Text),
-                    desk = desk,
-                    QuoteTotal = CalQuoteTotal()
-                };
-
-                StreamWriter jsonFile = File.CreateText(@"../../docs/quotes.json");
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(jsonFile, quote);
-
-                // string jsonFile = JsonConvert.SerializeObject(quote);
-
-                // StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
-                // jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
-                // jsonFile.Close();
-
-                /*
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Converters.Add(new JavaScriptDateTimeConverter());
-                serializer.NullValueHandling = NullValueHandling.Ignore;
-
-                using (StreamWriter sw = new StreamWriter(@"c:\json.txt"))
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    serializer.Serialize(writer, product);
-                    // {"ExpiryDate":new Date(1230375600000),"Price":0}
+                    MessageBox.Show("Your Quote requires a Customer Name.");
                 }
-                */
+                else
+                {
+                    List<NewQuote> newQuote = new List<NewQuote>();
+               
+                var filePath = @"../../docs/quotes.json";
+                var jsonData = System.IO.File.ReadAllText(filePath);
+                var quoteList = JsonConvert.DeserializeObject<List<NewQuote>>(jsonData)
+                      ?? new List<NewQuote>();
+                quoteList.Add(new NewQuote()
+                {
+                    SpecName = txtCustName.Text,
+                    SpecDate = lblQuoteDate.Text,
+                    SpecMaterial = cmbDeskMaterial.Text,
+                    SpecWidth = numWidth.Text,
+                    SpecDepth = numDepth.Text,
+                    SpecDrawers = numDrawers.Text,
+                    SpecRush = CalRushOrderCost().ToString(),
+                    SpecTotal = CalQuoteTotal().ToString()
+                });
+
+                jsonData = JsonConvert.SerializeObject(quoteList);
+                System.IO.File.WriteAllText(filePath, jsonData);  
+                
+                }
 
                 ViewAllQuotes viewViewAllQuotes = new ViewAllQuotes();
                 viewViewAllQuotes.Tag = this;
                 viewViewAllQuotes.Show(this);
                 Hide();
-            }
+         
         }
     }
 }

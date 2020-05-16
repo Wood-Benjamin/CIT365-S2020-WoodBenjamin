@@ -27,4 +27,15 @@ namespace MegaDesk_Wood
         public const int OVERSURFACE = 1;
         public const int LARGESURFACE = 2000;
     }
+    public struct NewQuote
+    {
+        public string SpecName;
+        public string SpecDate;
+        public string SpecMaterial;
+        public string SpecWidth;
+        public string SpecDepth;
+        public string SpecDrawers;
+        public string SpecRush;
+        public string SpecTotal;
+    }
 }
