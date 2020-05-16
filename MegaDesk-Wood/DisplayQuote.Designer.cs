@@ -253,6 +253,7 @@
             this.btnSaveQuote.TabIndex = 7;
             this.btnSaveQuote.Text = "Save Quote";
             this.btnSaveQuote.UseVisualStyleBackColor = true;
+            this.btnSaveQuote.Click += new System.EventHandler(this.btnSaveQuote_Click);
             // 
             // DisplayQuote
             // 

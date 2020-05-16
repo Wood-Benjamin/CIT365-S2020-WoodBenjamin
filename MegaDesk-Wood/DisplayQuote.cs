@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Wood
 {
@@ -57,5 +58,39 @@ namespace MegaDesk_Wood
             viewMainMenu.Show();
             Close();
         }
+
+        private void btnSaveQuote_Click(object sender, EventArgs e)
+        {
+            List<NewQuote> newQuote = new List<NewQuote>();
+
+            var filePath = @"../../docs/quotes.json";
+            var jsonData = System.IO.File.ReadAllText(filePath);
+            var quoteList = JsonConvert.DeserializeObject<List<NewQuote>>(jsonData)
+                  ?? new List<NewQuote>();
+            quoteList.Add(new NewQuote()
+            {
+                SpecName = lblName.Text,
+                SpecDate = lblQuoteDate.Text,
+                SpecMaterial = lblSurfaceMaterial.Text,
+                SpecWidth = lblWidth.Text,
+                SpecDepth = lblDepth.Text,
+                SpecDrawers = lblDrawerCost.Text,
+                SpecRush = lblRushCost.Text,
+                SpecTotal = lblTotalCost.Text
+            });
+
+            jsonData = JsonConvert.SerializeObject(quoteList);
+            System.IO.File.WriteAllText(filePath, jsonData);
+
+
+
+            MainMenu viewMainMenu = new MainMenu();
+            viewMainMenu.Tag = this;
+            viewMainMenu.Show(this);
+            Hide();
+
+        }
+        
+
     }
 }
