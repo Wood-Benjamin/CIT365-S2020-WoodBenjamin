@@ -56,5 +56,15 @@ namespace MegaDesk_Wood
             viewMainMenu.Show(this);
             Hide();
         }
+
+        private void dataGridViewAllQuotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grpViewAllQuotes_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
