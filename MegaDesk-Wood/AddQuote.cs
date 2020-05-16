@@ -389,8 +389,9 @@ namespace MegaDesk_Wood
 
         private void btnSaveQuote_Click(object sender, EventArgs e)
         {
-            // DeskQuote deskQuote = new DeskQuote();
-            // List<DeskQuote> newQuote = deskQuote.ReadQuotes();
+            /*
+            DeskQuote deskQuote = new DeskQuote();
+            //List<DeskQuote> newQuote = deskQuote.ReadQuotes();
             if (txtCustName.TextLength == 0)
             {
                 MessageBox.Show("Your Quote requires a Customer Name.");
@@ -413,34 +414,69 @@ namespace MegaDesk_Wood
                     QuoteTotal = CalQuoteTotal()
                 };
 
-                StreamWriter jsonFile = File.CreateText(@"../../docs/quotes.json");
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(jsonFile, quote);
-
                 // string jsonFile = JsonConvert.SerializeObject(quote);
 
-                // StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
-                // jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
-                // jsonFile.Close();
-
-                /*
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Converters.Add(new JavaScriptDateTimeConverter());
-                serializer.NullValueHandling = NullValueHandling.Ignore;
-
-                using (StreamWriter sw = new StreamWriter(@"c:\json.txt"))
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    serializer.Serialize(writer, product);
-                    // {"ExpiryDate":new Date(1230375600000),"Price":0}
-                }
+                StreamWriter jsonFile = new StreamWriter(@"../../docs/quotes.json", true);
+                jsonFile.WriteLine(quote.CustomerName + "," + quote.QuoteDate + "," + desk.Material + "," + desk.Width + "," + desk.Depth + "," + desk.Drawers + "," + desk.Rush + "," + quote.QuoteTotal);
+                jsonFile.Close();
                 */
+
+                
+                // DeskQuote deskQuote = new DeskQuote();
+                // List<DeskQuote> newQuote = deskQuote.ReadQuotes();
+                if (txtCustName.TextLength == 0)
+                {
+                    MessageBox.Show("Your Quote requires a Customer Name.");
+                }
+                else
+                {
+                    List<NewQuote> newQuote = new List<NewQuote>();
+                /*
+               *newQuote.Add(new NewQuote() { SpecName = txtCustName.Text,
+                                                  SpecDate = lblQuoteDate.Text,
+                                                  SpecMaterial = cmbDeskMaterial.Text,
+                                                  SpecWidth = numWidth.Text,
+                                                  SpecDepth = numDepth.Text,
+                                                  SpecDrawers = numDrawers.Text,
+                                                  SpecRush = CalRushOrderCost().ToString(),
+                                                  SpecTotal = CalQuoteTotal().ToString()});
+
+              using (StreamWriter jsonFile = File.CreateText(@"../../docs/quotes.json"))
+              {
+                  JsonSerializer serializer = new JsonSerializer();
+                  serializer.Serialize(jsonFile, newQuote);
+                  jsonFile.Close();
+
+*/
+
+
+                var filePath = @"../../docs/quotes.json";
+                var jsonData = System.IO.File.ReadAllText(filePath);
+                var quoteList = JsonConvert.DeserializeObject<List<NewQuote>>(jsonData)
+                      ?? new List<NewQuote>();
+                quoteList.Add(new NewQuote()
+                {
+                    SpecName = txtCustName.Text,
+                    SpecDate = lblQuoteDate.Text,
+                    SpecMaterial = cmbDeskMaterial.Text,
+                    SpecWidth = numWidth.Text,
+                    SpecDepth = numDepth.Text,
+                    SpecDrawers = numDrawers.Text,
+                    SpecRush = CalRushOrderCost().ToString(),
+                    SpecTotal = CalQuoteTotal().ToString()
+                });
+                jsonData = JsonConvert.SerializeObject(quoteList);
+                System.IO.File.WriteAllText(filePath, jsonData);
+                
+                }
+
+        
 
                 ViewAllQuotes viewViewAllQuotes = new ViewAllQuotes();
                 viewViewAllQuotes.Tag = this;
                 viewViewAllQuotes.Show(this);
                 Hide();
-            }
+         
         }
     }
 }
