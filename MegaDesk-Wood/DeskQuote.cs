@@ -38,4 +38,5 @@ namespace MegaDesk_Wood
         public string SpecRush;
         public string SpecTotal;
     }
+
 }
