@@ -151,8 +151,12 @@ namespace MegaDesk_Wood
                 return 0;
             }
         }
+
+        
+
         public int CalRushOrderCost()
         {
+            DeskQuote.rushOrderPrices = DeskQuote.GetRushOrderPrices();
             if (rushOrder == 0)
             {
                 return 0;
@@ -161,45 +165,45 @@ namespace MegaDesk_Wood
             {
                 if (desk.SurfaceArea < DeskQuote.BASESURFACE)
                 {
-                    return 60;
+                    return DeskQuote.rushOrderPrices[0,0];
                 }
                 else if (desk.SurfaceArea >= DeskQuote.BASESURFACE && desk.SurfaceArea <= DeskQuote.LARGESURFACE)
                 {
-                    return 70;
+                    return DeskQuote.rushOrderPrices[0, 1];
                 }
                 else
                 {
-                    return 80;
+                    return DeskQuote.rushOrderPrices[0, 2];
                 }
             }
             else if (rushOrder == 5)
             {
                 if (desk.SurfaceArea < DeskQuote.BASESURFACE)
                 {
-                    return 40;
+                    return DeskQuote.rushOrderPrices[1, 0];
                 }
                 else if (desk.SurfaceArea >= DeskQuote.BASESURFACE && desk.SurfaceArea <= DeskQuote.LARGESURFACE)
                 {
-                    return 50;
+                    return DeskQuote.rushOrderPrices[1, 1];
                 }
                 else
                 {
-                    return 60;
+                    return DeskQuote.rushOrderPrices[1,2];
                 }
             }
             else if (rushOrder == 7)
             {
                 if (desk.SurfaceArea < DeskQuote.BASESURFACE)
                 {
-                    return 30;
+                    return DeskQuote.rushOrderPrices[2, 0];
                 }
                 else if (desk.SurfaceArea >= DeskQuote.BASESURFACE && desk.SurfaceArea <= DeskQuote.LARGESURFACE)
                 {
-                    return 35;
+                    return DeskQuote.rushOrderPrices[2, 1];
                 }
                 else
                 {
-                    return 40;
+                    return DeskQuote.rushOrderPrices[2, 2];
                 }
             }
             else
@@ -453,6 +457,22 @@ namespace MegaDesk_Wood
             DisplayQuote viewQuote = new DisplayQuote(desk, quote);
             this.Hide();
             viewQuote.Show();
+        }
+
+        private void AddQuote_Load(object sender, EventArgs e)
+        {
+            int [,] rushOrderPrices4Table = DeskQuote.GetRushOrderPrices();
+            label15.Text = "$" + rushOrderPrices4Table[0, 0].ToString();
+            label20.Text = "$" + rushOrderPrices4Table[0, 1].ToString();
+            label23.Text = "$" + rushOrderPrices4Table[0, 2].ToString();
+            label16.Text = "$" + rushOrderPrices4Table[1, 0].ToString();
+            label19.Text = "$" + rushOrderPrices4Table[1, 1].ToString();
+            label22.Text = "$" + rushOrderPrices4Table[1, 2].ToString();
+            label17.Text = "$" + rushOrderPrices4Table[2, 0].ToString();
+            label18.Text = "$" + rushOrderPrices4Table[2, 1].ToString();
+            label21.Text = "$" + rushOrderPrices4Table[2, 2].ToString();
+
+
         }
     }
 }
