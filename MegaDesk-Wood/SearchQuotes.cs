@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace MegaDesk_Wood
         public SearchQuotes()
         {
             InitializeComponent();
+            dataGridSearchQuotes.Visible = false;
 
             //enum and combobox
             listMaterial.Insert(0, "Select");
@@ -27,39 +29,69 @@ namespace MegaDesk_Wood
             }
         }
 
- 
-
-        private void cmbSearchMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        private void SearchQuotes_Load(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            table.Columns.Add("Customer Name", typeof(string));
-            table.Columns.Add("Quote Date", typeof(DateTime));
-            table.Columns.Add("Desk Material", typeof(string));
-            table.Columns.Add("Width", typeof(int));
-            table.Columns.Add("Depth", typeof(int));
-            table.Columns.Add("Drawers", typeof(int));
-            table.Columns.Add("Rush Order", typeof(string));
-            table.Columns.Add("Sub Total", typeof(int));
-
             try
             {
-                StreamReader jsonFile = new StreamReader(@"../../docs/quotes.json");
-                while (!jsonFile.EndOfStream)
+                var json = @"../../docs/quotes.json";
+                using (StreamReader streamReader = new StreamReader(json))
                 {
-                    string[] col = jsonFile.ReadLine().Split(',');
-
-                    if (col[2] == cmbSearchMaterial.Text)
+                    string readQuotes = streamReader.ReadToEnd();
+                    List<NewQuote> newQuote = JsonConvert.DeserializeObject<List<NewQuote>>(readQuotes);
+                    dataGridSearchQuotes.DataSource = newQuote.Select(parameter => new
                     {
-                        table.Rows.Add(col[0], col[1], col[2], col[3], col[4], col[5], col[6], col[7]);
-                    }
+                        Customer = parameter.SpecName,
+                        Date = parameter.SpecDate,
+                        Material = parameter.SpecMaterial,
+                        Width = parameter.SpecWidth,
+                        Depth = parameter.SpecDepth,
+                        Drawers = parameter.SpecDrawers,
+                        Shipping = parameter.SpecRush,
+                        Total = parameter.SpecTotal
+
+                    }).ToList();
                 }
-                dataGridSearchQuotes.DataSource = table;
-                jsonFile.Close();
             }
             catch (Exception ea)
             {
                 MessageBox.Show("Error: " + ea.Message);
                 Close();
+            }
+        }
+
+        // cited works:
+        // stackoverflow.com/questions/13173915/search-for-value-in-datagridview-in-a-column/13174039
+        // www.codeproject.com/Questions/657059/Row-associated-with-the-currency-managers-position
+
+        private void cmbSearchMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string searchValue = cmbSearchMaterial.Text;
+            dataGridSearchQuotes.Visible = true;
+
+            try
+            {
+                foreach (DataGridViewRow row in dataGridSearchQuotes.Rows)
+                {
+                    
+                    if (row.Cells[2].Value.ToString().Equals(searchValue))
+                    {
+                        CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dataGridSearchQuotes.DataSource];
+                        currencyManager1.SuspendBinding();
+                        row.Visible = true;
+                        currencyManager1.ResumeBinding();
+                    }
+                    else if (row.Cells[2].Value.ToString() != searchValue)
+                    {
+                        CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dataGridSearchQuotes.DataSource];
+                        currencyManager1.SuspendBinding();
+                        row.Visible = false;
+                        currencyManager1.ResumeBinding();
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
             }
         }
 
