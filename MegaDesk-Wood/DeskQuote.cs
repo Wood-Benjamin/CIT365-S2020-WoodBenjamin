@@ -33,30 +33,39 @@ namespace MegaDesk_Wood
 
         public static int [ , ] GetRushOrderPrices()
         {
-
-            int[,] rushOrderPrices = new int[3, 3];
-            var filePath = @"../../docs/rushOrderPrices.txt";
-            StreamReader reader = new StreamReader(filePath);
-            string[] priceList = new string[9];
-            int i = 0;
-            while (reader.EndOfStream == false)
+            try
             {
-                string line = reader.ReadLine();
-                priceList[i] = line;
-                i++;
-            }
-            
-            reader.Close();
-            int counter = 0;
-           while( counter < 9)
-            {
-                for(int y = 0; y<3;y++)
-                { for (int x = 0; x < 3; x++)
-                    { rushOrderPrices[y, x] = int.Parse(priceList[counter]);
-                        counter++;
-                    }
-
+                int[,] rushOrderPrices = new int[3, 3];
+                var filePath = @"../../docs/rushOrderPrices.txt";
+                StreamReader reader = new StreamReader(filePath);
+                string[] priceList = new string[9];
+                int i = 0;
+                while (reader.EndOfStream == false)
+                {
+                    string line = reader.ReadLine();
+                    priceList[i] = line;
+                    i++;
                 }
+
+                reader.Close();
+                int counter = 0;
+                while (counter < 9)
+                {
+                    for (int y = 0; y < 3; y++)
+                    {
+                        for (int x = 0; x < 3; x++)
+                        {
+                            rushOrderPrices[y, x] = int.Parse(priceList[counter]);
+                            counter++;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message);
+                Application.Exit();
             }
             return rushOrderPrices;
         }

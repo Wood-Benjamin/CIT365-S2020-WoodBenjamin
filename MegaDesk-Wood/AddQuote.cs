@@ -7,8 +7,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,7 +27,7 @@ namespace MegaDesk_Wood
         {
             InitializeComponent();
             CurrentDate();
-            txtCustName.Select();
+            txtCustName.Focus();
             
             //enum and combobox
             listMaterial.Insert(0, "Select");
@@ -37,9 +39,21 @@ namespace MegaDesk_Wood
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
+            if (numWidth.Text.ToString().Trim() == "")
+            {
+                numWidth.Text = "24";
+            }
+            else if (numDepth.Text.ToString().Trim() == "")
+            {
+                numWidth.Text = "24";
+            }
+            else if (numDrawers.Text.ToString().Trim() == "")
+            {
+                numWidth.Text = "0";
+            }
             MainMenu viewMainMenu = (MainMenu)Tag;
-            viewMainMenu.Show();
-            Close();
+                viewMainMenu.Show();
+                Close();            
         }
 
         public void CurrentDate()
@@ -238,20 +252,20 @@ namespace MegaDesk_Wood
         }
         private void txtCustName_Validating(object sender, CancelEventArgs e)
         {
-            if (String.IsNullOrEmpty(txtCustName.Text))
-            {
-                //message
-                MessageBox.Show($"Oops, You must enter a name");
-                txtCustName.Text = String.Empty;
-                answer_Enter(this, EventArgs.Empty);
-                txtCustName.BackColor = Color.Red;
-                txtCustName.Focus();
-            }
-            else
-            {
-                txtCustName.BackColor = default(Color);
-                QuoteRefresh();
-            }
+            //if (String.IsNullOrEmpty(txtCustName.Text))
+            //{
+            //    //message
+            //    MessageBox.Show($"Oops, You must enter a name");
+            //    txtCustName.Text = String.Empty;
+            //    answer_Enter(this, EventArgs.Empty);
+            //    txtCustName.BackColor = Color.Red;
+            //    txtCustName.Focus();
+            //}
+            //else
+            //{
+            //    txtCustName.BackColor = default(Color);
+            //    QuoteRefresh();
+            //}
         }
 
         private void numWidth_Validating(object sender, CancelEventArgs e)
@@ -261,7 +275,13 @@ namespace MegaDesk_Wood
                 if (WidthInput < Desk.MINWIDTH || WidthInput > Desk.MAXWIDTH)
                 {
                     //message
+                    //message
                     MessageBox.Show($"Oops, Check your Width.\n\n\nRound to the nearest Inch between {Desk.MINWIDTH} and {Desk.MAXWIDTH} inches.");
+                    numWidth.Text = String.Empty;
+                    answer_Enter(this, EventArgs.Empty);
+                    numWidth.BackColor = Color.Red;
+                    numWidth.Focus();
+                    
                     numWidth.Text = String.Empty;
                     answer_Enter(this, EventArgs.Empty);
                     numWidth.BackColor = Color.Red;
@@ -276,11 +296,18 @@ namespace MegaDesk_Wood
             else if (numWidth.Text.Trim() == "")
             {
                 //message
-                MessageBox.Show($"Oops, You must enter a Width");
-                numWidth.Text = String.Empty;
-                answer_Enter(this, EventArgs.Empty);
-                numWidth.BackColor = Color.Red;
-                numWidth.Focus();
+                string message = "Click Ok to go back or Cancel to Quit.";
+                string title = "Message Box";
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                DialogResult result = MessageBox.Show(message, title, buttons, icon);
+                if (result == DialogResult.Cancel)
+                {
+                    MainMenu viewMainMenu = new MainMenu();
+                    viewMainMenu.Tag = this;
+                    viewMainMenu.Show(this);
+                    Hide();
+                }
             }
         }
 
@@ -323,11 +350,18 @@ namespace MegaDesk_Wood
             else if (numDepth.Text.Trim() == "")
             {
                 //message
-                MessageBox.Show($"Oops, You must enter a Depth");
-                numDepth.Text = String.Empty;
-                answer_Enter(this, EventArgs.Empty);
-                numDepth.BackColor = Color.Red;
-                numDepth.Focus();
+                string message = "Click Ok to go back or Cancel to Quit.";
+                string title = "Message Box";
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                DialogResult result = MessageBox.Show(message, title, buttons, icon);
+                if (result == DialogResult.Cancel)
+                {
+                    MainMenu viewMainMenu = new MainMenu();
+                    viewMainMenu.Tag = this;
+                    viewMainMenu.Show(this);
+                    Hide();
+                }
             }
         }
 
@@ -370,11 +404,18 @@ namespace MegaDesk_Wood
             else if (numDrawers.Text.Trim() == "")
             {
                 //message
-                MessageBox.Show($"Oops, You must enter number of Drawers.\n\nEnter 0 for none.");
-                numDrawers.Text = String.Empty;
-                answer_Enter(this, EventArgs.Empty);
-                numDrawers.BackColor = Color.Red;
-                numDrawers.Focus();
+                string message = "Click Ok to go back or Cancel to Quit.";
+                string title = "Message Box";
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                DialogResult result = MessageBox.Show(message, title, buttons, icon);
+                if (result == DialogResult.Cancel)
+                {
+                    MainMenu viewMainMenu = new MainMenu();
+                    viewMainMenu.Tag = this;
+                    viewMainMenu.Show(this);
+                    Hide();
+                }
             }
         }
 
@@ -430,33 +471,57 @@ namespace MegaDesk_Wood
             QuoteRefresh();
         }
 
+        private bool custNameValidate()
+        {
+            if (txtCustName.Text.Trim() == "")
+            {
+                //message
+                MessageBox.Show($"Oops, You must enter a name");
+                txtCustName.Text = String.Empty;
+                answer_Enter(this, EventArgs.Empty);
+                txtCustName.BackColor = Color.Red;
+                txtCustName.Focus();
+                return false;
+            }
+            else
+            {
+                txtCustName.BackColor = default(Color);
+                QuoteRefresh();
+                return true;
+            }
+            
+        }
+
         private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
         {
-            
-            Desk desk = new Desk()
+           
+            if (custNameValidate())
             {
-                Material = cmbDeskMaterial.Text,
-                Width = int.Parse(numWidth.Text),
-                Depth = int.Parse(numDepth.Text),
-                Drawers = int.Parse(numDrawers.Text),
-                Rush = rushOrder
-            };
-            DeskQuote quote = new DeskQuote()
-            {
-                CustomerName = txtCustName.Text,
-                QuoteDate = DateTime.Parse(lblQuoteDate.Text),
-                desk = desk,
-                QuoteTotal = CalQuoteTotal(),
-                MaterialCost = CalMaterialCost(),
-                SurfaceAreaCost = CalSurfaceAreaCost(),
-                DrawerCost = CalDrawerCost(),
-                RushCost = CalRushOrderCost()
-            };
+                Desk desk = new Desk()
+                {
+                    Material = cmbDeskMaterial.Text,
+                    Width = int.Parse(numWidth.Text),
+                    Depth = int.Parse(numDepth.Text),
+                    Drawers = int.Parse(numDrawers.Text),
+                    Rush = rushOrder
+                };
+                DeskQuote quote = new DeskQuote()
+                {
+                    CustomerName = txtCustName.Text,
+                    QuoteDate = DateTime.Parse(lblQuoteDate.Text),
+                    desk = desk,
+                    QuoteTotal = CalQuoteTotal(),
+                    MaterialCost = CalMaterialCost(),
+                    SurfaceAreaCost = CalSurfaceAreaCost(),
+                    DrawerCost = CalDrawerCost(),
+                    RushCost = CalRushOrderCost()
+                };
+
+                DisplayQuote viewQuote = new DisplayQuote(desk, quote);
+                this.Hide();
+                viewQuote.Show();
+            }          
             
-            
-            DisplayQuote viewQuote = new DisplayQuote(desk, quote);
-            this.Hide();
-            viewQuote.Show();
         }
 
         private void AddQuote_Load(object sender, EventArgs e)
