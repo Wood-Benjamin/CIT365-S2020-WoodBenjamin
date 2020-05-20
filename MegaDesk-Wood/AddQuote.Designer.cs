@@ -99,6 +99,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(629, 652);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 30);
             this.btnClose.TabIndex = 7;
@@ -108,15 +109,16 @@
             // 
             // lblCustName
             // 
-            this.lblCustName.Location = new System.Drawing.Point(6, 22);
+            this.lblCustName.Location = new System.Drawing.Point(5, 22);
             this.lblCustName.Name = "lblCustName";
-            this.lblCustName.Size = new System.Drawing.Size(72, 19);
+            this.lblCustName.Size = new System.Drawing.Size(72, 18);
             this.lblCustName.TabIndex = 0;
             this.lblCustName.Text = "Name:";
             // 
             // txtCustName
             // 
-            this.txtCustName.Location = new System.Drawing.Point(126, 19);
+            this.txtCustName.Location = new System.Drawing.Point(125, 18);
+            this.txtCustName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.Size = new System.Drawing.Size(203, 22);
             this.txtCustName.TabIndex = 0;
@@ -125,7 +127,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(380, 19);
+            this.label1.Location = new System.Drawing.Point(380, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 22);
             this.label1.TabIndex = 4;
@@ -133,7 +135,7 @@
             // 
             // lblQuoteDate
             // 
-            this.lblQuoteDate.Location = new System.Drawing.Point(473, 19);
+            this.lblQuoteDate.Location = new System.Drawing.Point(473, 18);
             this.lblQuoteDate.Name = "lblQuoteDate";
             this.lblQuoteDate.Size = new System.Drawing.Size(167, 22);
             this.lblQuoteDate.TabIndex = 5;
@@ -144,8 +146,10 @@
             // 
             this.grpSelectMaterial.Controls.Add(this.cmbDeskMaterial);
             this.grpSelectMaterial.Location = new System.Drawing.Point(29, 357);
+            this.grpSelectMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpSelectMaterial.Name = "grpSelectMaterial";
-            this.grpSelectMaterial.Size = new System.Drawing.Size(335, 77);
+            this.grpSelectMaterial.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpSelectMaterial.Size = new System.Drawing.Size(335, 78);
             this.grpSelectMaterial.TabIndex = 4;
             this.grpSelectMaterial.TabStop = false;
             this.grpSelectMaterial.Text = "Select Material";
@@ -154,7 +158,8 @@
             // 
             this.cmbDeskMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDeskMaterial.FormattingEnabled = true;
-            this.cmbDeskMaterial.Location = new System.Drawing.Point(126, 31);
+            this.cmbDeskMaterial.Location = new System.Drawing.Point(125, 31);
+            this.cmbDeskMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDeskMaterial.Name = "cmbDeskMaterial";
             this.cmbDeskMaterial.Size = new System.Drawing.Size(203, 24);
             this.cmbDeskMaterial.TabIndex = 1;
@@ -171,8 +176,10 @@
             this.grpCalArea.Controls.Add(this.label3);
             this.grpCalArea.Controls.Add(this.label2);
             this.grpCalArea.Location = new System.Drawing.Point(29, 82);
+            this.grpCalArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCalArea.Name = "grpCalArea";
-            this.grpCalArea.Size = new System.Drawing.Size(335, 189);
+            this.grpCalArea.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpCalArea.Size = new System.Drawing.Size(335, 190);
             this.grpCalArea.TabIndex = 2;
             this.grpCalArea.TabStop = false;
             this.grpCalArea.Text = "Calculate Area";
@@ -189,6 +196,7 @@
             // numDepth
             // 
             this.numDepth.Location = new System.Drawing.Point(125, 94);
+            this.numDepth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numDepth.Name = "numDepth";
             this.numDepth.Size = new System.Drawing.Size(203, 22);
             this.numDepth.TabIndex = 19;
@@ -208,7 +216,8 @@
             // 
             // numWidth
             // 
-            this.numWidth.Location = new System.Drawing.Point(125, 29);
+            this.numWidth.Location = new System.Drawing.Point(125, 30);
+            this.numWidth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numWidth.Name = "numWidth";
             this.numWidth.Size = new System.Drawing.Size(203, 22);
             this.numWidth.TabIndex = 18;
@@ -221,7 +230,7 @@
             // 
             this.lblSurfaceArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSurfaceArea.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lblSurfaceArea.Location = new System.Drawing.Point(193, 157);
+            this.lblSurfaceArea.Location = new System.Drawing.Point(193, 158);
             this.lblSurfaceArea.Name = "lblSurfaceArea";
             this.lblSurfaceArea.Size = new System.Drawing.Size(92, 25);
             this.lblSurfaceArea.TabIndex = 4;
@@ -229,7 +238,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(6, 157);
+            this.label4.Location = new System.Drawing.Point(5, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 25);
             this.label4.TabIndex = 3;
@@ -237,7 +246,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(6, 97);
+            this.label3.Location = new System.Drawing.Point(5, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 20);
             this.label3.TabIndex = 2;
@@ -245,7 +254,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(6, 32);
+            this.label2.Location = new System.Drawing.Point(5, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 23);
             this.label2.TabIndex = 1;
@@ -258,8 +267,10 @@
             this.grpQuoteInfo.Controls.Add(this.label1);
             this.grpQuoteInfo.Controls.Add(this.lblQuoteDate);
             this.grpQuoteInfo.Location = new System.Drawing.Point(28, 23);
+            this.grpQuoteInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpQuoteInfo.Name = "grpQuoteInfo";
-            this.grpQuoteInfo.Size = new System.Drawing.Size(678, 53);
+            this.grpQuoteInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpQuoteInfo.Size = new System.Drawing.Size(677, 53);
             this.grpQuoteInfo.TabIndex = 1;
             this.grpQuoteInfo.TabStop = false;
             this.grpQuoteInfo.Text = "Customer";
@@ -269,8 +280,10 @@
             this.grpDrawers.Controls.Add(this.numDrawers);
             this.grpDrawers.Controls.Add(this.label8);
             this.grpDrawers.Location = new System.Drawing.Point(29, 277);
+            this.grpDrawers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDrawers.Name = "grpDrawers";
-            this.grpDrawers.Size = new System.Drawing.Size(334, 74);
+            this.grpDrawers.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpDrawers.Size = new System.Drawing.Size(333, 74);
             this.grpDrawers.TabIndex = 3;
             this.grpDrawers.TabStop = false;
             this.grpDrawers.Text = "How Many Drawers?";
@@ -278,6 +291,7 @@
             // numDrawers
             // 
             this.numDrawers.Location = new System.Drawing.Point(125, 30);
+            this.numDrawers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numDrawers.Name = "numDrawers";
             this.numDrawers.Size = new System.Drawing.Size(203, 22);
             this.numDrawers.TabIndex = 20;
@@ -288,7 +302,7 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(6, 33);
+            this.label8.Location = new System.Drawing.Point(5, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(181, 25);
             this.label8.TabIndex = 4;
@@ -301,18 +315,20 @@
             this.grpRushDays.Controls.Add(this.rd5Days);
             this.grpRushDays.Controls.Add(this.rd7Days);
             this.grpRushDays.Controls.Add(this.rd14Days);
-            this.grpRushDays.Location = new System.Drawing.Point(29, 440);
+            this.grpRushDays.Location = new System.Drawing.Point(29, 441);
+            this.grpRushDays.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpRushDays.Name = "grpRushDays";
-            this.grpRushDays.Size = new System.Drawing.Size(334, 188);
+            this.grpRushDays.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpRushDays.Size = new System.Drawing.Size(333, 188);
             this.grpRushDays.TabIndex = 5;
             this.grpRushDays.TabStop = false;
             this.grpRushDays.Text = "How Soon?";
             // 
             // label38
             // 
-            this.label38.Location = new System.Drawing.Point(6, 154);
+            this.label38.Location = new System.Drawing.Point(5, 154);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(206, 24);
+            this.label38.Size = new System.Drawing.Size(205, 25);
             this.label38.TabIndex = 21;
             this.label38.Text = "* See Additional Rush Cost";
             this.label38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -321,6 +337,7 @@
             // 
             this.rd3Days.AutoSize = true;
             this.rd3Days.Location = new System.Drawing.Point(8, 112);
+            this.rd3Days.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rd3Days.Name = "rd3Days";
             this.rd3Days.Size = new System.Drawing.Size(82, 21);
             this.rd3Days.TabIndex = 4;
@@ -333,6 +350,7 @@
             // 
             this.rd5Days.AutoSize = true;
             this.rd5Days.Location = new System.Drawing.Point(8, 85);
+            this.rd5Days.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rd5Days.Name = "rd5Days";
             this.rd5Days.Size = new System.Drawing.Size(82, 21);
             this.rd5Days.TabIndex = 3;
@@ -345,6 +363,7 @@
             // 
             this.rd7Days.AutoSize = true;
             this.rd7Days.Location = new System.Drawing.Point(8, 58);
+            this.rd7Days.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rd7Days.Name = "rd7Days";
             this.rd7Days.Size = new System.Drawing.Size(82, 21);
             this.rd7Days.TabIndex = 2;
@@ -357,6 +376,7 @@
             // 
             this.rd14Days.AutoSize = true;
             this.rd14Days.Location = new System.Drawing.Point(8, 31);
+            this.rd14Days.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rd14Days.Name = "rd14Days";
             this.rd14Days.Size = new System.Drawing.Size(153, 21);
             this.rd14Days.TabIndex = 1;
@@ -367,7 +387,7 @@
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(8, 88);
+            this.label9.Location = new System.Drawing.Point(8, 89);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 22);
             this.label9.TabIndex = 5;
@@ -409,7 +429,7 @@
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(93, 125);
+            this.label16.Location = new System.Drawing.Point(93, 126);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(35, 22);
             this.label16.TabIndex = 12;
@@ -417,7 +437,7 @@
             // 
             // label17
             // 
-            this.label17.Location = new System.Drawing.Point(93, 157);
+            this.label17.Location = new System.Drawing.Point(93, 158);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(35, 22);
             this.label17.TabIndex = 13;
@@ -426,9 +446,9 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(144, 51);
+            this.label13.Location = new System.Drawing.Point(144, 50);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 24);
+            this.label13.Size = new System.Drawing.Size(92, 25);
             this.label13.TabIndex = 20;
             this.label13.Text = "1000 to 2000";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -471,8 +491,10 @@
             this.grpRushDetails.Controls.Add(this.label10);
             this.grpRushDetails.Controls.Add(this.label9);
             this.grpRushDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpRushDetails.Location = new System.Drawing.Point(387, 440);
+            this.grpRushDetails.Location = new System.Drawing.Point(387, 441);
+            this.grpRushDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpRushDetails.Name = "grpRushDetails";
+            this.grpRushDetails.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpRushDetails.Size = new System.Drawing.Size(335, 188);
             this.grpRushDetails.TabIndex = 11;
             this.grpRushDetails.TabStop = false;
@@ -482,13 +504,13 @@
             // 
             this.label37.Location = new System.Drawing.Point(8, 69);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(320, 19);
+            this.label37.Size = new System.Drawing.Size(320, 18);
             this.label37.TabIndex = 14;
             this.label37.Text = "----------------------------------------------------------------------------";
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(266, 156);
+            this.label21.Location = new System.Drawing.Point(267, 156);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(35, 22);
             this.label21.TabIndex = 28;
@@ -496,7 +518,7 @@
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(266, 124);
+            this.label22.Location = new System.Drawing.Point(267, 124);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(35, 22);
             this.label22.TabIndex = 27;
@@ -504,7 +526,7 @@
             // 
             // label23
             // 
-            this.label23.Location = new System.Drawing.Point(266, 88);
+            this.label23.Location = new System.Drawing.Point(267, 89);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(35, 22);
             this.label23.TabIndex = 26;
@@ -528,7 +550,7 @@
             // 
             // label20
             // 
-            this.label20.Location = new System.Drawing.Point(176, 88);
+            this.label20.Location = new System.Drawing.Point(176, 89);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(35, 22);
             this.label20.TabIndex = 23;
@@ -537,6 +559,7 @@
             // btnSubmitDisplayQuote
             // 
             this.btnSubmitDisplayQuote.Location = new System.Drawing.Point(457, 652);
+            this.btnSubmitDisplayQuote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmitDisplayQuote.Name = "btnSubmitDisplayQuote";
             this.btnSubmitDisplayQuote.Size = new System.Drawing.Size(141, 30);
             this.btnSubmitDisplayQuote.TabIndex = 6;
@@ -561,7 +584,9 @@
             this.grpQuoteSummary.Controls.Add(this.label25);
             this.grpQuoteSummary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpQuoteSummary.Location = new System.Drawing.Point(387, 82);
+            this.grpQuoteSummary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpQuoteSummary.Name = "grpQuoteSummary";
+            this.grpQuoteSummary.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpQuoteSummary.Size = new System.Drawing.Size(335, 352);
             this.grpQuoteSummary.TabIndex = 13;
             this.grpQuoteSummary.TabStop = false;
@@ -571,7 +596,7 @@
             // 
             this.label5.Location = new System.Drawing.Point(7, 281);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(320, 19);
+            this.label5.Size = new System.Drawing.Size(320, 18);
             this.label5.TabIndex = 15;
             this.label5.Text = "----------------------------------------------------------------------------";
             // 
@@ -609,7 +634,7 @@
             // 
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.Blue;
-            this.label33.Location = new System.Drawing.Point(181, 136);
+            this.label33.Location = new System.Drawing.Point(181, 135);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(92, 25);
             this.label33.TabIndex = 9;
@@ -619,7 +644,7 @@
             // 
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.Blue;
-            this.label32.Location = new System.Drawing.Point(181, 83);
+            this.label32.Location = new System.Drawing.Point(181, 82);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(92, 25);
             this.label32.TabIndex = 8;
@@ -637,7 +662,7 @@
             // 
             // label30
             // 
-            this.label30.Location = new System.Drawing.Point(6, 309);
+            this.label30.Location = new System.Drawing.Point(5, 309);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(169, 20);
             this.label30.TabIndex = 6;
@@ -655,7 +680,7 @@
             // 
             // label28
             // 
-            this.label28.Location = new System.Drawing.Point(6, 191);
+            this.label28.Location = new System.Drawing.Point(5, 191);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(169, 20);
             this.label28.TabIndex = 4;
@@ -664,7 +689,7 @@
             // 
             // label27
             // 
-            this.label27.Location = new System.Drawing.Point(7, 136);
+            this.label27.Location = new System.Drawing.Point(7, 135);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(169, 20);
             this.label27.TabIndex = 3;
@@ -673,7 +698,7 @@
             // 
             // label26
             // 
-            this.label26.Location = new System.Drawing.Point(7, 83);
+            this.label26.Location = new System.Drawing.Point(7, 82);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(169, 20);
             this.label26.TabIndex = 2;
@@ -682,9 +707,9 @@
             // 
             // label25
             // 
-            this.label25.Location = new System.Drawing.Point(10, 30);
+            this.label25.Location = new System.Drawing.Point(11, 30);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(165, 19);
+            this.label25.Size = new System.Drawing.Size(165, 18);
             this.label25.TabIndex = 1;
             this.label25.Text = "Base Cost:";
             this.label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -693,7 +718,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 705);
+            this.ClientSize = new System.Drawing.Size(744, 698);
             this.Controls.Add(this.grpQuoteSummary);
             this.Controls.Add(this.btnSubmitDisplayQuote);
             this.Controls.Add(this.grpRushDetails);
@@ -703,9 +728,11 @@
             this.Controls.Add(this.grpCalArea);
             this.Controls.Add(this.grpSelectMaterial);
             this.Controls.Add(this.btnClose);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Quote";
+            this.Load += new System.EventHandler(this.AddQuote_Load);
             this.grpSelectMaterial.ResumeLayout(false);
             this.grpCalArea.ResumeLayout(false);
             this.grpCalArea.PerformLayout();

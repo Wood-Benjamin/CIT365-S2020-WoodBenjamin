@@ -53,9 +53,10 @@ namespace MegaDesk_Wood
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            MainMenu viewMainMenu = (MainMenu)Tag;
-            viewMainMenu.Show();
-            Close();
+            MainMenu viewMainMenu = new MainMenu();
+            viewMainMenu.Tag = this;
+            viewMainMenu.Show(this);
+            Hide();
         }
 
         private void btnSaveQuote_Click(object sender, EventArgs e)

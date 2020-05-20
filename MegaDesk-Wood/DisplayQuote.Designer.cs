@@ -30,17 +30,30 @@
         {
             this.btnCancelQuote = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblQuoteDate = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblSurfaceMaterial = new System.Windows.Forms.Label();
             this.lblDrawerCount = new System.Windows.Forms.Label();
             this.lblDepth = new System.Windows.Forms.Label();
             this.lblWidth = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.lblDeliveryDate = new System.Windows.Forms.Label();
             this.lbldeliveryTime = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.lblDrawerCost = new System.Windows.Forms.Label();
             this.lblRushCost = new System.Windows.Forms.Label();
             this.lblMaterialCost = new System.Windows.Forms.Label();
@@ -48,20 +61,7 @@
             this.lblBaseCost = new System.Windows.Forms.Label();
             this.lblTotalCost = new System.Windows.Forms.Label();
             this.btnSaveQuote = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,6 +94,26 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(439, 32);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Date: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 32);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Name: ";
             // 
             // lblQuoteDate
             // 
@@ -134,6 +154,42 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Desk Specifications";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(11, 158);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 30);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Surface Material:";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(11, 117);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(187, 30);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Number of Drawers:";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(12, 79);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(187, 30);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Desk Depth:";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(11, 42);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(187, 30);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Desk Width:";
             // 
             // lblSurfaceMaterial
             // 
@@ -191,6 +247,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Selected Delivery";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(14, 86);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 24);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Delivery Date:";
+            // 
             // lblDeliveryDate
             // 
             this.lblDeliveryDate.AutoSize = true;
@@ -210,6 +276,16 @@
             this.lbldeliveryTime.Size = new System.Drawing.Size(60, 24);
             this.lbldeliveryTime.TabIndex = 5;
             this.lbldeliveryTime.Text = "label1";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(14, 43);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(93, 24);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Deliver in:";
             // 
             // groupBox4
             // 
@@ -232,6 +308,55 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detailed Cost Breakdown";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 204);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 24);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Cost for Drawers: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 257);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(204, 24);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Cost for Rush Delivery: ";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(23, 147);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(229, 24);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Cost for Surface Material: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 85);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(206, 24);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Additional Cost of Size: ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 34);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 24);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Base Cost:";
             // 
             // lblDrawerCost
             // 
@@ -311,111 +436,6 @@
             this.btnSaveQuote.UseVisualStyleBackColor = true;
             this.btnSaveQuote.Click += new System.EventHandler(this.btnSaveQuote_Click);
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(11, 158);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 30);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Surface Material:";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(11, 117);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 30);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Number of Drawers:";
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(12, 79);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 30);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Desk Depth:";
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(11, 42);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 30);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Desk Width:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 32);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 25);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Name: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(439, 32);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Date: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 204);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 24);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Cost for Drawers: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 257);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(204, 24);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Cost for Rush Delivery: ";
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(23, 147);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(229, 24);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Cost for Surface Material: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 85);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(206, 24);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Additional Cost of Size: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(23, 34);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 24);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Base Cost:";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -427,31 +447,11 @@
             this.label12.TabIndex = 8;
             this.label12.Text = "Total Cost: ";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 86);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(156, 30);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Delivery Date:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 43);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 30);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Deliver in:";
-            // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 555);
+            this.ClientSize = new System.Drawing.Size(752, 543);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnSaveQuote);
             this.Controls.Add(this.lblTotalCost);

@@ -127,7 +127,7 @@
     <None Include="images\MegaDeskMain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\megaDeskBackground.jpg" />
+    <Content Include="docs\rushOrderPrices.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
