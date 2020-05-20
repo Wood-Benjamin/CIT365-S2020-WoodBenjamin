@@ -38,6 +38,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(1087, 425);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 30);
             this.btnClose.TabIndex = 1;
@@ -49,7 +50,9 @@
             // 
             this.grpViewAllQuotes.Controls.Add(this.dataGridViewAllQuotes);
             this.grpViewAllQuotes.Location = new System.Drawing.Point(12, 12);
+            this.grpViewAllQuotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpViewAllQuotes.Name = "grpViewAllQuotes";
+            this.grpViewAllQuotes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpViewAllQuotes.Size = new System.Drawing.Size(1177, 407);
             this.grpViewAllQuotes.TabIndex = 2;
             this.grpViewAllQuotes.TabStop = false;
@@ -59,7 +62,8 @@
             // 
             this.dataGridViewAllQuotes.AllowUserToOrderColumns = true;
             this.dataGridViewAllQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAllQuotes.Location = new System.Drawing.Point(15, 29);
+            this.dataGridViewAllQuotes.Location = new System.Drawing.Point(15, 30);
+            this.dataGridViewAllQuotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewAllQuotes.Name = "dataGridViewAllQuotes";
             this.dataGridViewAllQuotes.RowHeadersWidth = 51;
             this.dataGridViewAllQuotes.RowTemplate.Height = 24;
@@ -70,9 +74,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 464);
+            this.ClientSize = new System.Drawing.Size(1199, 469);
             this.Controls.Add(this.grpViewAllQuotes);
             this.Controls.Add(this.btnClose);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ViewAllQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View All Quotes";

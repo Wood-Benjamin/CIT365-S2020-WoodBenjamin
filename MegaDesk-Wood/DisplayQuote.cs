@@ -19,34 +19,33 @@ namespace MegaDesk_Wood
 
             InitializeComponent();
 
-            lblName.Text = "Name: " + quote.CustomerName;
+            lblName.Text = quote.CustomerName;
 
-            lblWidth.Text = "Desk Width: " + desk.Width.ToString() + " inches";
+            lblWidth.Text = desk.Width.ToString() + " inches";
 
-            lblDepth.Text = "Desk Depth: " + desk.Depth.ToString() + " inches";
+            lblDepth.Text = desk.Depth.ToString() + " inches";
 
-            lblDrawerCount.Text = "Number of Drawers: " + desk.Drawers.ToString();
+            lblDrawerCount.Text = desk.Drawers.ToString();
 
-            lblSurfaceMaterial.Text = "Surface Material: " + desk.Material.ToString();
+            lblSurfaceMaterial.Text = desk.Material.ToString();
             //=====TT??? The desk.Rush is not being set anywhere
-            lbldeliveryTime.Text = "Deliver in: " + desk.Rush.ToString() + " Days";
+            lbldeliveryTime.Text = desk.Rush.ToString() + " Days";
             DateTime quoteDate = quote.QuoteDate;
-            lblDeliveryDate.Text = "Delivery Date: "; //+ DateTime.quoteDate.AddDays(desk.Rush).ToString("dd MMMM yyyy");
+            lblDeliveryDate.Text = " "; //+ DateTime.quoteDate.AddDays(desk.Rush).ToString("dd MMMM yyyy");
 
-            lblBaseCost.Text = "Base Cost: $" + DeskQuote.BASEPRICE;
+            lblBaseCost.Text = "$" + DeskQuote.BASEPRICE;
 
+            lblAreaCost.Text = "$" + quote.SurfaceAreaCost.ToString();
 
-            lblAreaCost.Text = "Additional Cost of Size: $" + quote.SurfaceAreaCost.ToString();
+            lblMaterialCost.Text = "$" + quote.MaterialCost.ToString();
 
-            lblMaterialCost.Text = "Cost for Surface Material: $" + quote.MaterialCost.ToString();
+            lblRushCost.Text = "$" + quote.RushCost.ToString();
 
-            lblRushCost.Text = "Cost for Rush Delivery: $" + quote.RushCost.ToString();
+            lblDrawerCost.Text = "$" + quote.DrawerCost.ToString();
 
-            lblDrawerCost.Text = "Cost for Drawers: $" + quote.DrawerCost.ToString();
+            lblTotalCost.Text = "$" + quote.QuoteTotal.ToString();
 
-            lblTotalCost.Text = "Total Cost: $" + quote.QuoteTotal.ToString();
-
-            lblQuoteDate.Text = "Order Date: " + quote.QuoteDate.ToString("dd MMMM yyyy");
+            lblQuoteDate.Text = quote.QuoteDate.ToString("dd MMMM yyyy");
 
 
 
@@ -90,7 +89,10 @@ namespace MegaDesk_Wood
             Hide();
 
         }
-        
 
+        private void lblRushCost_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

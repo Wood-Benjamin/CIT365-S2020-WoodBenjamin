@@ -21,13 +21,12 @@ namespace MegaDesk_Wood
         Desk desk = new Desk();
         public List<string> listMaterial = new List<string>();
         int rushOrder;
-        int SurfaceArea;
         public AddQuote()
         {
             InitializeComponent();
             CurrentDate();
             txtCustName.Select();
-
+            
             //enum and combobox
             listMaterial.Insert(0, "Select");
             foreach (var name in Enum.GetNames(typeof(DeskMaterial)))
@@ -128,7 +127,7 @@ namespace MegaDesk_Wood
                     return 125;
                 default:
                     return 0;
-            }
+            }            
         }
         public int CalSurfaceAreaCost()
         {
@@ -237,6 +236,23 @@ namespace MegaDesk_Wood
                 answerBox.Select(0, lengthOfAnswer);
             }
         }
+        private void txtCustName_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtCustName.Text))
+            {
+                //message
+                MessageBox.Show($"Oops, You must enter a name");
+                txtCustName.Text = String.Empty;
+                answer_Enter(this, EventArgs.Empty);
+                txtCustName.BackColor = Color.Red;
+                txtCustName.Focus();
+            }
+            else
+            {
+                txtCustName.BackColor = default(Color);
+                QuoteRefresh();
+            }
+        }
 
         private void numWidth_Validating(object sender, CancelEventArgs e)
         {
@@ -256,6 +272,15 @@ namespace MegaDesk_Wood
                     numWidth.BackColor = default(Color);
                     QuoteRefresh();
                 }
+            }
+            else if (numWidth.Text.Trim() == "")
+            {
+                //message
+                MessageBox.Show($"Oops, You must enter a Width");
+                numWidth.Text = String.Empty;
+                answer_Enter(this, EventArgs.Empty);
+                numWidth.BackColor = Color.Red;
+                numWidth.Focus();
             }
         }
 
@@ -295,6 +320,15 @@ namespace MegaDesk_Wood
                     QuoteRefresh();
                 }
             }
+            else if (numDepth.Text.Trim() == "")
+            {
+                //message
+                MessageBox.Show($"Oops, You must enter a Depth");
+                numDepth.Text = String.Empty;
+                answer_Enter(this, EventArgs.Empty);
+                numDepth.BackColor = Color.Red;
+                numDepth.Focus();
+            }
         }
 
         private void numDepth_KeyPress(object sender, KeyPressEventArgs e)
@@ -326,12 +360,21 @@ namespace MegaDesk_Wood
                     answer_Enter(this, EventArgs.Empty);
                     numDrawers.BackColor = Color.Red;
                     numDrawers.Focus();
-                }
+                }                
                 else
                 {
                     numDrawers.BackColor = default(Color);
                     QuoteRefresh();
                 }
+            }
+            else if (numDrawers.Text.Trim() == "")
+            {
+                //message
+                MessageBox.Show($"Oops, You must enter number of Drawers.\n\nEnter 0 for none.");
+                numDrawers.Text = String.Empty;
+                answer_Enter(this, EventArgs.Empty);
+                numDrawers.BackColor = Color.Red;
+                numDrawers.Focus();
             }
         }
 
@@ -351,6 +394,7 @@ namespace MegaDesk_Wood
                 QuoteRefresh();
             }
         }
+
         
         private void rd14Days_CheckedChanged(object sender, EventArgs e)
         {
@@ -388,6 +432,7 @@ namespace MegaDesk_Wood
 
         private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
         {
+            
             Desk desk = new Desk()
             {
                 Material = cmbDeskMaterial.Text,
@@ -406,50 +451,12 @@ namespace MegaDesk_Wood
                 SurfaceAreaCost = CalSurfaceAreaCost(),
                 DrawerCost = CalDrawerCost(),
                 RushCost = CalRushOrderCost()
-        };
-
+            };
+            
+            
             DisplayQuote viewQuote = new DisplayQuote(desk, quote);
-             this.Hide();
-             viewQuote.Show();
-        }
-
-        private void btnSaveQuote_Click(object sender, EventArgs e)
-        {
-           
-                if (txtCustName.TextLength == 0)
-                {
-                    MessageBox.Show("Your Quote requires a Customer Name.");
-                }
-                else
-                {
-                    List<NewQuote> newQuote = new List<NewQuote>();
-               
-                var filePath = @"../../docs/quotes.json";
-                var jsonData = System.IO.File.ReadAllText(filePath);
-                var quoteList = JsonConvert.DeserializeObject<List<NewQuote>>(jsonData)
-                      ?? new List<NewQuote>();
-                quoteList.Add(new NewQuote()
-                {
-                    SpecName = txtCustName.Text,
-                    SpecDate = lblQuoteDate.Text,
-                    SpecMaterial = cmbDeskMaterial.Text,
-                    SpecWidth = numWidth.Text,
-                    SpecDepth = numDepth.Text,
-                    SpecDrawers = numDrawers.Text,
-                    SpecRush = CalRushOrderCost().ToString(),
-                    SpecTotal = CalQuoteTotal().ToString()
-                });
-
-                jsonData = JsonConvert.SerializeObject(quoteList);
-                System.IO.File.WriteAllText(filePath, jsonData);  
-                
-                }
-
-                ViewAllQuotes viewViewAllQuotes = new ViewAllQuotes();
-                viewViewAllQuotes.Tag = this;
-                viewViewAllQuotes.Show(this);
-                Hide();
-         
+            this.Hide();
+            viewQuote.Show();
         }
 
         private void AddQuote_Load(object sender, EventArgs e)
