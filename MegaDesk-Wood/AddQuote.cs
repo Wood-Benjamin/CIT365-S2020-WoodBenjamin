@@ -171,7 +171,7 @@ namespace MegaDesk_Wood
         public int CalRushOrderCost()
         {
             DeskQuote.rushOrderPrices = DeskQuote.GetRushOrderPrices();
-            if (rushOrder == 0)
+            if (rushOrder == 14)
             {
                 return 0;
             }
@@ -439,7 +439,7 @@ namespace MegaDesk_Wood
         
         private void rd14Days_CheckedChanged(object sender, EventArgs e)
         {
-            rushOrder = 0;
+            rushOrder = 14;
             QuoteRefresh();
         }
 
@@ -492,10 +492,25 @@ namespace MegaDesk_Wood
             
         }
 
+       private bool rushOrderShippingValidate()
+        {
+            int chkShippingSelected = CalRushOrderCost();
+            if (chkShippingSelected == 1)
+            {
+                MessageBox.Show($"Oops, You must select Delivery Time");
+                return false;
+
+            }
+            else
+            {
+                return true;
+            }
+        } 
+
         private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
         {
            
-            if (custNameValidate())
+            if (custNameValidate() && rushOrderShippingValidate())
             {
                 Desk desk = new Desk()
                 {

@@ -23,7 +23,7 @@ namespace MegaDesk_Wood
 
         //=========Added for RushOrder Method (Traesa)
         public static int[,] rushOrderPrices = new int[3, 3];
-      //  public static int[] testPriceArray = new int[9];
+      
 
         //constraints
         public const int BASEPRICE = 200;
@@ -33,22 +33,10 @@ namespace MegaDesk_Wood
 
         public static int [ , ] GetRushOrderPrices()
         {
-            try
-            {
-                int[,] rushOrderPrices = new int[3, 3];
-                var filePath = @"../../docs/rushOrderPrices.txt";
-                StreamReader reader = new StreamReader(filePath);
-                string[] priceList = new string[9];
-                int i = 0;
-                while (reader.EndOfStream == false)
-                {
-                    string line = reader.ReadLine();
-                    priceList[i] = line;
-                    i++;
-                }
-
-                reader.Close();
-                int counter = 0;
+            int[,] rushOrderPrices = new int[3, 3];
+            string[] priceList = new string[9];
+            priceList = ReadRushOrderPrices();
+            int counter = 0;
                 while (counter < 9)
                 {
                     for (int y = 0; y < 3; y++)
@@ -61,16 +49,39 @@ namespace MegaDesk_Wood
 
                     }
                 }
+            return rushOrderPrices;
+
+        }
+
+        public static string[] ReadRushOrderPrices()
+        {
+            string[] priceList = new string[9];
+            try
+            {
+
+                var filePath = @"../../docs/rushOrderPrices.txt";
+                StreamReader reader = new StreamReader(filePath);
+                int i = 0;
+                while (reader.EndOfStream == false)
+                {
+                    string line = reader.ReadLine();
+                    priceList[i] = line;
+                    i++;
+                }
+
+                reader.Close();
+
             }
             catch (Exception e)
             {
                 MessageBox.Show("Error: " + e.Message);
                 Application.Exit();
             }
-            return rushOrderPrices;
+            return priceList;
         }
-
     }
+
+   
     public struct NewQuote
     {
         public string SpecName;
