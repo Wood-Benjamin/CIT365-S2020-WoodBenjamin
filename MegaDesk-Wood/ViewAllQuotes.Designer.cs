@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
             this.btnClose = new System.Windows.Forms.Button();
             this.grpViewAllQuotes = new System.Windows.Forms.GroupBox();
             this.dataGridViewAllQuotes = new System.Windows.Forms.DataGridView();
@@ -37,10 +38,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(1087, 425);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(815, 345);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(91, 30);
+            this.btnClose.Size = new System.Drawing.Size(68, 24);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -48,12 +49,13 @@
             // 
             // grpViewAllQuotes
             // 
+            this.grpViewAllQuotes.BackColor = System.Drawing.Color.Transparent;
             this.grpViewAllQuotes.Controls.Add(this.dataGridViewAllQuotes);
-            this.grpViewAllQuotes.Location = new System.Drawing.Point(12, 12);
-            this.grpViewAllQuotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpViewAllQuotes.Location = new System.Drawing.Point(9, 10);
+            this.grpViewAllQuotes.Margin = new System.Windows.Forms.Padding(2);
             this.grpViewAllQuotes.Name = "grpViewAllQuotes";
-            this.grpViewAllQuotes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpViewAllQuotes.Size = new System.Drawing.Size(1177, 407);
+            this.grpViewAllQuotes.Padding = new System.Windows.Forms.Padding(2);
+            this.grpViewAllQuotes.Size = new System.Drawing.Size(883, 331);
             this.grpViewAllQuotes.TabIndex = 2;
             this.grpViewAllQuotes.TabStop = false;
             this.grpViewAllQuotes.Text = "View All Quotes";
@@ -62,22 +64,24 @@
             // 
             this.dataGridViewAllQuotes.AllowUserToOrderColumns = true;
             this.dataGridViewAllQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAllQuotes.Location = new System.Drawing.Point(15, 30);
-            this.dataGridViewAllQuotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewAllQuotes.Location = new System.Drawing.Point(11, 24);
+            this.dataGridViewAllQuotes.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewAllQuotes.Name = "dataGridViewAllQuotes";
             this.dataGridViewAllQuotes.RowHeadersWidth = 51;
             this.dataGridViewAllQuotes.RowTemplate.Height = 24;
-            this.dataGridViewAllQuotes.Size = new System.Drawing.Size(1151, 366);
+            this.dataGridViewAllQuotes.Size = new System.Drawing.Size(863, 297);
             this.dataGridViewAllQuotes.TabIndex = 0;
             // 
             // ViewAllQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 469);
+            this.BackgroundImage = global::MegaDesk_Wood.Properties.Resources.displayBackgroundOverLayLong;
+            this.ClientSize = new System.Drawing.Size(899, 381);
             this.Controls.Add(this.grpViewAllQuotes);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewAllQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View All Quotes";

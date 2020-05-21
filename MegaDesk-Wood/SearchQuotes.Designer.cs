@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCloseSearch = new System.Windows.Forms.Button();
             this.dataGridSearchQuotes = new System.Windows.Forms.DataGridView();
@@ -40,20 +41,20 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(633, 340);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(475, 276);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(91, 30);
+            this.btnClose.Size = new System.Drawing.Size(68, 24);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // btnCloseSearch
             // 
-            this.btnCloseSearch.Location = new System.Drawing.Point(1096, 424);
-            this.btnCloseSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCloseSearch.Location = new System.Drawing.Point(822, 344);
+            this.btnCloseSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseSearch.Name = "btnCloseSearch";
-            this.btnCloseSearch.Size = new System.Drawing.Size(91, 30);
+            this.btnCloseSearch.Size = new System.Drawing.Size(68, 24);
             this.btnCloseSearch.TabIndex = 3;
             this.btnCloseSearch.Text = "Close";
             this.btnCloseSearch.UseVisualStyleBackColor = true;
@@ -63,24 +64,25 @@
             // 
             this.dataGridSearchQuotes.AllowUserToOrderColumns = true;
             this.dataGridSearchQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridSearchQuotes.Location = new System.Drawing.Point(6, 72);
-            this.dataGridSearchQuotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridSearchQuotes.Location = new System.Drawing.Point(4, 58);
+            this.dataGridSearchQuotes.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridSearchQuotes.Name = "dataGridSearchQuotes";
             this.dataGridSearchQuotes.RowHeadersWidth = 51;
             this.dataGridSearchQuotes.RowTemplate.Height = 24;
-            this.dataGridSearchQuotes.Size = new System.Drawing.Size(1165, 316);
+            this.dataGridSearchQuotes.Size = new System.Drawing.Size(874, 257);
             this.dataGridSearchQuotes.TabIndex = 0;
             // 
             // grpSearchQuotes
             // 
+            this.grpSearchQuotes.BackColor = System.Drawing.Color.Transparent;
             this.grpSearchQuotes.Controls.Add(this.cmbSearchMaterial);
             this.grpSearchQuotes.Controls.Add(this.label1);
             this.grpSearchQuotes.Controls.Add(this.dataGridSearchQuotes);
-            this.grpSearchQuotes.Location = new System.Drawing.Point(16, 18);
-            this.grpSearchQuotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpSearchQuotes.Location = new System.Drawing.Point(12, 15);
+            this.grpSearchQuotes.Margin = new System.Windows.Forms.Padding(2);
             this.grpSearchQuotes.Name = "grpSearchQuotes";
-            this.grpSearchQuotes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpSearchQuotes.Size = new System.Drawing.Size(1177, 402);
+            this.grpSearchQuotes.Padding = new System.Windows.Forms.Padding(2);
+            this.grpSearchQuotes.Size = new System.Drawing.Size(883, 327);
             this.grpSearchQuotes.TabIndex = 4;
             this.grpSearchQuotes.TabStop = false;
             this.grpSearchQuotes.Text = "Search Quotes";
@@ -88,10 +90,9 @@
             // cmbSearchMaterial
             // 
             this.cmbSearchMaterial.FormattingEnabled = true;
-            this.cmbSearchMaterial.Location = new System.Drawing.Point(286, 28);
-            this.cmbSearchMaterial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSearchMaterial.Location = new System.Drawing.Point(214, 23);
             this.cmbSearchMaterial.Name = "cmbSearchMaterial";
-            this.cmbSearchMaterial.Size = new System.Drawing.Size(160, 24);
+            this.cmbSearchMaterial.Size = new System.Drawing.Size(121, 21);
             this.cmbSearchMaterial.TabIndex = 2;
             this.cmbSearchMaterial.SelectedIndexChanged += new System.EventHandler(this.cmbSearchMaterial_SelectedIndexChanged);
             // 
@@ -99,22 +100,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 25);
+            this.label1.Size = new System.Drawing.Size(204, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Search Quotes by Material: ";
             // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 468);
+            this.BackgroundImage = global::MegaDesk_Wood.Properties.Resources.displayBackgroundOverLayLong;
+            this.ClientSize = new System.Drawing.Size(903, 380);
             this.Controls.Add(this.btnCloseSearch);
             this.Controls.Add(this.grpSearchQuotes);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "SearchQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
