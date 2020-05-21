@@ -95,5 +95,10 @@ namespace MegaDesk_Wood
         {
 
         }
+
+        private void DisplayQuote_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

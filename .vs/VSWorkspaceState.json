@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\MathQuiz",
+    "\\MathQuiz\\Properties",
     "\\MegaDesk-Wood"
   ],
-  "SelectedNode": "\\MegaDesk-Wood\\MegaDesk-Wood.sln",
+  "SelectedNode": "\\MegaDesk-Wood\\App.config",
   "PreviewInSolutionExplorer": false
 }
