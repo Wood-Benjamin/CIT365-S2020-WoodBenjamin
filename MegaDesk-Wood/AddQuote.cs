@@ -505,12 +505,26 @@ namespace MegaDesk_Wood
             {
                 return true;
             }
-        } 
+        }
 
+        private bool materialValidate()
+        {
+            
+            if (cmbDeskMaterial.Text == "")
+            {
+                MessageBox.Show($"Oops, You must select desk material");
+                return false;
+
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
         {
            
-            if (custNameValidate() && rushOrderShippingValidate())
+            if (custNameValidate() && materialValidate() && rushOrderShippingValidate())
             {
                 Desk desk = new Desk()
                 {
