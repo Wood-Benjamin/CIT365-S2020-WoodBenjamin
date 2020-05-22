@@ -800,7 +800,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MegaDesk_Wood.Properties.Resources.displayBackgroundAddQuote;
             this.ClientSize = new System.Drawing.Size(824, 825);
             this.Controls.Add(this.grpQuoteSummary);
             this.Controls.Add(this.btnSubmitDisplayQuote);
