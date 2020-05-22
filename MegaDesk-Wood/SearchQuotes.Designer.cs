@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MegaDesk_Wood.Properties.Resources.displayBackgroundOverLayLong;
+            this.BackgroundImage = global::MegaDesk_Wood.Properties.Resources.WoodBackground;
             this.ClientSize = new System.Drawing.Size(903, 380);
             this.Controls.Add(this.btnCloseSearch);
             this.Controls.Add(this.grpSearchQuotes);

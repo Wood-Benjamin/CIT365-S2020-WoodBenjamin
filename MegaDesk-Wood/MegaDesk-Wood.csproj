@@ -124,15 +124,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\MegaDeskMain.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="docs\rushOrderPrices.txt" />
-    <Content Include="images\displayBackground.jpg" />
-    <Content Include="images\displayBackgroundAddQuote.jpg" />
-    <Content Include="images\displayBackgroundOverLay.jpg" />
-    <Content Include="images\displayBackgroundOverLayLong.jpg" />
     <Content Include="images\megaDeskBackground.jpg" />
+    <Content Include="images\WoodBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

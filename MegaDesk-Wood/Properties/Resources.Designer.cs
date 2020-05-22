@@ -63,36 +63,6 @@ namespace MegaDesk_Wood.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap displayBackgroundAddQuote {
-            get {
-                object obj = ResourceManager.GetObject("displayBackgroundAddQuote", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap displayBackgroundOverLay {
-            get {
-                object obj = ResourceManager.GetObject("displayBackgroundOverLay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap displayBackgroundOverLayLong {
-            get {
-                object obj = ResourceManager.GetObject("displayBackgroundOverLayLong", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap megaDeskBackground {
             get {
                 object obj = ResourceManager.GetObject("megaDeskBackground", resourceCulture);
@@ -103,9 +73,9 @@ namespace MegaDesk_Wood.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MegaDeskMain {
+        internal static System.Drawing.Bitmap WoodBackground {
             get {
-                object obj = ResourceManager.GetObject("MegaDeskMain", resourceCulture);
+                object obj = ResourceManager.GetObject("WoodBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

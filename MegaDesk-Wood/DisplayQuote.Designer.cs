@@ -421,7 +421,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MegaDesk_Wood.Properties.Resources.displayBackgroundOverLay;
+            this.BackgroundImage = global::MegaDesk_Wood.Properties.Resources.WoodBackground;
             this.ClientSize = new System.Drawing.Size(564, 441);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnSaveQuote);
