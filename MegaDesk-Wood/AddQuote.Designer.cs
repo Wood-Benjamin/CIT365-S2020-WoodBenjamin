@@ -102,7 +102,7 @@
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(485, 617);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(118, 44);
             this.btnClose.TabIndex = 7;
@@ -124,12 +124,11 @@
             // 
             this.txtCustName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustName.Location = new System.Drawing.Point(104, 22);
-            this.txtCustName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCustName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.Size = new System.Drawing.Size(153, 24);
             this.txtCustName.TabIndex = 0;
             this.txtCustName.TextChanged += new System.EventHandler(this.txtCustName_TextChanged);
-            this.txtCustName.Validating += new System.ComponentModel.CancelEventHandler(this.txtCustName_Validating);
             // 
             // label1
             // 
@@ -159,9 +158,9 @@
             this.grpSelectMaterial.Controls.Add(this.cmbDeskMaterial);
             this.grpSelectMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpSelectMaterial.Location = new System.Drawing.Point(22, 357);
-            this.grpSelectMaterial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSelectMaterial.Margin = new System.Windows.Forms.Padding(2);
             this.grpSelectMaterial.Name = "grpSelectMaterial";
-            this.grpSelectMaterial.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSelectMaterial.Padding = new System.Windows.Forms.Padding(2);
             this.grpSelectMaterial.Size = new System.Drawing.Size(271, 90);
             this.grpSelectMaterial.TabIndex = 4;
             this.grpSelectMaterial.TabStop = false;
@@ -183,7 +182,7 @@
             this.cmbDeskMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDeskMaterial.FormattingEnabled = true;
             this.cmbDeskMaterial.Location = new System.Drawing.Point(104, 41);
-            this.cmbDeskMaterial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbDeskMaterial.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDeskMaterial.Name = "cmbDeskMaterial";
             this.cmbDeskMaterial.Size = new System.Drawing.Size(153, 25);
             this.cmbDeskMaterial.TabIndex = 1;
@@ -202,9 +201,9 @@
             this.grpCalArea.Controls.Add(this.label2);
             this.grpCalArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCalArea.Location = new System.Drawing.Point(22, 80);
-            this.grpCalArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpCalArea.Margin = new System.Windows.Forms.Padding(2);
             this.grpCalArea.Name = "grpCalArea";
-            this.grpCalArea.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpCalArea.Padding = new System.Windows.Forms.Padding(2);
             this.grpCalArea.Size = new System.Drawing.Size(271, 189);
             this.grpCalArea.TabIndex = 2;
             this.grpCalArea.TabStop = false;
@@ -217,15 +216,16 @@
             this.label7.Location = new System.Drawing.Point(102, 103);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 20);
+            this.label7.Size = new System.Drawing.Size(154, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "(min 12\", max 48\")";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numDepth
             // 
             this.numDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numDepth.Location = new System.Drawing.Point(104, 76);
-            this.numDepth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numDepth.Margin = new System.Windows.Forms.Padding(2);
             this.numDepth.Name = "numDepth";
             this.numDepth.Size = new System.Drawing.Size(153, 24);
             this.numDepth.TabIndex = 19;
@@ -241,15 +241,16 @@
             this.label6.Location = new System.Drawing.Point(102, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 20);
+            this.label6.Size = new System.Drawing.Size(155, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "(min 24\", max 96\")";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numWidth
             // 
             this.numWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numWidth.Location = new System.Drawing.Point(104, 24);
-            this.numWidth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numWidth.Margin = new System.Windows.Forms.Padding(2);
             this.numWidth.Name = "numWidth";
             this.numWidth.Size = new System.Drawing.Size(153, 24);
             this.numWidth.TabIndex = 18;
@@ -309,9 +310,9 @@
             this.grpQuoteInfo.Controls.Add(this.lblQuoteDate);
             this.grpQuoteInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpQuoteInfo.Location = new System.Drawing.Point(21, 19);
-            this.grpQuoteInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpQuoteInfo.Margin = new System.Windows.Forms.Padding(2);
             this.grpQuoteInfo.Name = "grpQuoteInfo";
-            this.grpQuoteInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpQuoteInfo.Padding = new System.Windows.Forms.Padding(2);
             this.grpQuoteInfo.Size = new System.Drawing.Size(582, 58);
             this.grpQuoteInfo.TabIndex = 1;
             this.grpQuoteInfo.TabStop = false;
@@ -324,9 +325,9 @@
             this.grpDrawers.Controls.Add(this.label8);
             this.grpDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDrawers.Location = new System.Drawing.Point(22, 273);
-            this.grpDrawers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDrawers.Margin = new System.Windows.Forms.Padding(2);
             this.grpDrawers.Name = "grpDrawers";
-            this.grpDrawers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDrawers.Padding = new System.Windows.Forms.Padding(2);
             this.grpDrawers.Size = new System.Drawing.Size(271, 80);
             this.grpDrawers.TabIndex = 3;
             this.grpDrawers.TabStop = false;
@@ -336,7 +337,7 @@
             // 
             this.numDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numDrawers.Location = new System.Drawing.Point(104, 31);
-            this.numDrawers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numDrawers.Margin = new System.Windows.Forms.Padding(2);
             this.numDrawers.Name = "numDrawers";
             this.numDrawers.Size = new System.Drawing.Size(153, 24);
             this.numDrawers.TabIndex = 20;
@@ -365,9 +366,9 @@
             this.grpRushDays.Controls.Add(this.rd14Days);
             this.grpRushDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpRushDays.Location = new System.Drawing.Point(22, 450);
-            this.grpRushDays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpRushDays.Margin = new System.Windows.Forms.Padding(2);
             this.grpRushDays.Name = "grpRushDays";
-            this.grpRushDays.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpRushDays.Padding = new System.Windows.Forms.Padding(2);
             this.grpRushDays.Size = new System.Drawing.Size(271, 155);
             this.grpRushDays.TabIndex = 5;
             this.grpRushDays.TabStop = false;
@@ -389,7 +390,7 @@
             this.rd3Days.AutoSize = true;
             this.rd3Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd3Days.Location = new System.Drawing.Point(6, 91);
-            this.rd3Days.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rd3Days.Margin = new System.Windows.Forms.Padding(2);
             this.rd3Days.Name = "rd3Days";
             this.rd3Days.Size = new System.Drawing.Size(82, 22);
             this.rd3Days.TabIndex = 4;
@@ -403,7 +404,7 @@
             this.rd5Days.AutoSize = true;
             this.rd5Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd5Days.Location = new System.Drawing.Point(6, 69);
-            this.rd5Days.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rd5Days.Margin = new System.Windows.Forms.Padding(2);
             this.rd5Days.Name = "rd5Days";
             this.rd5Days.Size = new System.Drawing.Size(82, 22);
             this.rd5Days.TabIndex = 3;
@@ -417,7 +418,7 @@
             this.rd7Days.AutoSize = true;
             this.rd7Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd7Days.Location = new System.Drawing.Point(6, 47);
-            this.rd7Days.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rd7Days.Margin = new System.Windows.Forms.Padding(2);
             this.rd7Days.Name = "rd7Days";
             this.rd7Days.Size = new System.Drawing.Size(82, 22);
             this.rd7Days.TabIndex = 2;
@@ -431,7 +432,7 @@
             this.rd14Days.AutoSize = true;
             this.rd14Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd14Days.Location = new System.Drawing.Point(6, 25);
-            this.rd14Days.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rd14Days.Margin = new System.Windows.Forms.Padding(2);
             this.rd14Days.Name = "rd14Days";
             this.rd14Days.Size = new System.Drawing.Size(153, 22);
             this.rd14Days.TabIndex = 1;
@@ -572,9 +573,9 @@
             this.grpRushDetails.Controls.Add(this.label9);
             this.grpRushDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpRushDetails.Location = new System.Drawing.Point(304, 397);
-            this.grpRushDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpRushDetails.Margin = new System.Windows.Forms.Padding(2);
             this.grpRushDetails.Name = "grpRushDetails";
-            this.grpRushDetails.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpRushDetails.Padding = new System.Windows.Forms.Padding(2);
             this.grpRushDetails.Size = new System.Drawing.Size(298, 208);
             this.grpRushDetails.TabIndex = 11;
             this.grpRushDetails.TabStop = false;
@@ -661,7 +662,7 @@
             // 
             this.btnSubmitDisplayQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitDisplayQuote.Location = new System.Drawing.Point(356, 617);
-            this.btnSubmitDisplayQuote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmitDisplayQuote.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmitDisplayQuote.Name = "btnSubmitDisplayQuote";
             this.btnSubmitDisplayQuote.Size = new System.Drawing.Size(118, 44);
             this.btnSubmitDisplayQuote.TabIndex = 6;
@@ -688,9 +689,9 @@
             this.grpQuoteSummary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpQuoteSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpQuoteSummary.Location = new System.Drawing.Point(304, 80);
-            this.grpQuoteSummary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpQuoteSummary.Margin = new System.Windows.Forms.Padding(2);
             this.grpQuoteSummary.Name = "grpQuoteSummary";
-            this.grpQuoteSummary.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpQuoteSummary.Padding = new System.Windows.Forms.Padding(2);
             this.grpQuoteSummary.Size = new System.Drawing.Size(298, 314);
             this.grpQuoteSummary.TabIndex = 13;
             this.grpQuoteSummary.TabStop = false;
@@ -854,7 +855,7 @@
             this.Controls.Add(this.grpSelectMaterial);
             this.Controls.Add(this.btnClose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Quote";

@@ -252,20 +252,7 @@ namespace MegaDesk_Wood
         }
         private void txtCustName_Validating(object sender, CancelEventArgs e)
         {
-            //if (String.IsNullOrEmpty(txtCustName.Text))
-            //{
-            //    //message
-            //    MessageBox.Show($"Oops, You must enter a name");
-            //    txtCustName.Text = String.Empty;
-            //    answer_Enter(this, EventArgs.Empty);
-            //    txtCustName.BackColor = Color.Red;
-            //    txtCustName.Focus();
-            //}
-            //else
-            //{
-            //    txtCustName.BackColor = default(Color);
-            //    QuoteRefresh();
-            //}
+          
         }
 
         private void numWidth_Validating(object sender, CancelEventArgs e)
@@ -521,10 +508,49 @@ namespace MegaDesk_Wood
                 return true;
             }
         }
+
+        private bool drawersValidate()
+        {
+            if (numDrawers.Text.Trim() == "")
+            {
+                MessageBox.Show($"Oops, You must select number of drawers");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private bool widthNotEmptyValidate()
+        {
+            if (numWidth.Text.Trim() == "")
+            {
+                MessageBox.Show($"Oops, You must enter the Width");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private bool depthNotEmptyValidate()
+        {
+            if (numDepth.Text.Trim() == "")
+            {
+                MessageBox.Show($"Oops, You must enter Depth");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
         private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
         {
            
-            if (custNameValidate() && materialValidate() && rushOrderShippingValidate())
+            if (custNameValidate() && widthNotEmptyValidate() && depthNotEmptyValidate() && materialValidate() && drawersValidate() && rushOrderShippingValidate())
             {
                 Desk desk = new Desk()
                 {
