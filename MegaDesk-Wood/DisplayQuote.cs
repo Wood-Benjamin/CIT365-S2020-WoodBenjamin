@@ -31,7 +31,6 @@ namespace MegaDesk_Wood
             //=====TT??? The desk.Rush is not being set anywhere
             lbldeliveryTime.Text = desk.Rush.ToString() + " Days";
             DateTime quoteDate = quote.QuoteDate;
-            lblDeliveryDate.Text = " "; //+ DateTime.quoteDate.AddDays(desk.Rush).ToString("dd MMMM yyyy");
 
             lblBaseCost.Text = "$" + DeskQuote.BASEPRICE;
 
