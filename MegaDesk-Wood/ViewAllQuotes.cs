@@ -39,7 +39,7 @@ namespace MegaDesk_Wood
                     dataGridViewAllQuotes.DataSource = newQuote.Select(parameter => new
                     {
                         Customer = parameter.SpecName,
-                        Date = parameter.SpecDate,
+                        Date = parameter.SpecDate.ToString("dd MMMM yyyy"),
                         Material = parameter.SpecMaterial,
                         Width = parameter.SpecWidth,
                         Depth = parameter.SpecDepth,

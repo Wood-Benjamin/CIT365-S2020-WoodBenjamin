@@ -69,7 +69,7 @@ namespace MegaDesk_Wood
             quoteList.Add(new NewQuote()
             {
                 SpecName = lblName.Text,
-                SpecDate = lblQuoteDate.Text,
+                SpecDate = Convert.ToDateTime(lblQuoteDate.Text),
                 SpecMaterial = lblSurfaceMaterial.Text,
                 SpecWidth = lblWidth.Text,
                 SpecDepth = lblDepth.Text,

@@ -85,7 +85,7 @@ namespace MegaDesk_Wood
     public struct NewQuote
     {
         public string SpecName;
-        public string SpecDate;
+        public DateTime SpecDate;
         public string SpecMaterial;
         public string SpecWidth;
         public string SpecDepth;
