@@ -1,11 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk_Wood
@@ -23,7 +17,7 @@ namespace MegaDesk_Wood
 
         //=========Added for RushOrder Method (Traesa)
         public static int[,] rushOrderPrices = new int[3, 3];
-      
+
 
         //constraints
         public const int BASEPRICE = 200;
@@ -31,24 +25,24 @@ namespace MegaDesk_Wood
         public const int OVERSURFACE = 1;
         public const int LARGESURFACE = 2000;
 
-        public static int [ , ] GetRushOrderPrices()
+        public static int[,] GetRushOrderPrices()
         {
             int[,] rushOrderPrices = new int[3, 3];
             string[] priceList = new string[9];
             priceList = ReadRushOrderPrices();
             int counter = 0;
-                while (counter < 9)
+            while (counter < 9)
+            {
+                for (int y = 0; y < 3; y++)
                 {
-                    for (int y = 0; y < 3; y++)
+                    for (int x = 0; x < 3; x++)
                     {
-                        for (int x = 0; x < 3; x++)
-                        {
-                            rushOrderPrices[y, x] = int.Parse(priceList[counter]);
-                            counter++;
-                        }
-
+                        rushOrderPrices[y, x] = int.Parse(priceList[counter]);
+                        counter++;
                     }
+
                 }
+            }
             return rushOrderPrices;
 
         }
@@ -81,7 +75,7 @@ namespace MegaDesk_Wood
         }
     }
 
-   
+
     public struct NewQuote
     {
         public string SpecName;

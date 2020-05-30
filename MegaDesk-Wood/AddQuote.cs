@@ -1,18 +1,7 @@
-﻿using MegaDesk_Wood;
-using Newtonsoft.Json;
-using System;
-using System.CodeDom;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk_Wood
@@ -28,7 +17,7 @@ namespace MegaDesk_Wood
             InitializeComponent();
             CurrentDate();
             txtCustName.Focus();
-            
+
             //enum and combobox
             listMaterial.Insert(0, "Select");
             foreach (var name in Enum.GetNames(typeof(DeskMaterial)))
@@ -52,8 +41,8 @@ namespace MegaDesk_Wood
                 numWidth.Text = "0";
             }
             MainMenu viewMainMenu = (MainMenu)Tag;
-                viewMainMenu.Show();
-                Close();            
+            viewMainMenu.Show();
+            Close();
         }
 
         public void CurrentDate()
@@ -141,7 +130,7 @@ namespace MegaDesk_Wood
                     return 125;
                 default:
                     return 0;
-            }            
+            }
         }
         public int CalSurfaceAreaCost()
         {
@@ -166,7 +155,7 @@ namespace MegaDesk_Wood
             }
         }
 
-        
+
 
         public int CalRushOrderCost()
         {
@@ -179,7 +168,7 @@ namespace MegaDesk_Wood
             {
                 if (desk.SurfaceArea < DeskQuote.BASESURFACE)
                 {
-                    return DeskQuote.rushOrderPrices[0,0];
+                    return DeskQuote.rushOrderPrices[0, 0];
                 }
                 else if (desk.SurfaceArea >= DeskQuote.BASESURFACE && desk.SurfaceArea <= DeskQuote.LARGESURFACE)
                 {
@@ -202,7 +191,7 @@ namespace MegaDesk_Wood
                 }
                 else
                 {
-                    return DeskQuote.rushOrderPrices[1,2];
+                    return DeskQuote.rushOrderPrices[1, 2];
                 }
             }
             else if (rushOrder == 7)
@@ -252,7 +241,7 @@ namespace MegaDesk_Wood
         }
         private void txtCustName_Validating(object sender, CancelEventArgs e)
         {
-          
+
         }
 
         private void numWidth_Validating(object sender, CancelEventArgs e)
@@ -268,7 +257,7 @@ namespace MegaDesk_Wood
                     answer_Enter(this, EventArgs.Empty);
                     numWidth.BackColor = Color.Red;
                     numWidth.Focus();
-                    
+
                     numWidth.Text = String.Empty;
                     answer_Enter(this, EventArgs.Empty);
                     numWidth.BackColor = Color.Red;
@@ -381,7 +370,7 @@ namespace MegaDesk_Wood
                     answer_Enter(this, EventArgs.Empty);
                     numDrawers.BackColor = Color.Red;
                     numDrawers.Focus();
-                }                
+                }
                 else
                 {
                     numDrawers.BackColor = default(Color);
@@ -423,7 +412,7 @@ namespace MegaDesk_Wood
             }
         }
 
-        
+
         private void rd14Days_CheckedChanged(object sender, EventArgs e)
         {
             rushOrder = 14;
@@ -476,10 +465,10 @@ namespace MegaDesk_Wood
                 QuoteRefresh();
                 return true;
             }
-            
+
         }
 
-       private bool rushOrderShippingValidate()
+        private bool rushOrderShippingValidate()
         {
             int chkShippingSelected = CalRushOrderCost();
             if (chkShippingSelected == 1)
@@ -496,7 +485,7 @@ namespace MegaDesk_Wood
 
         private bool materialValidate()
         {
-            
+
             if (cmbDeskMaterial.Text == "")
             {
                 MessageBox.Show($"Oops, You must select desk material");
@@ -549,7 +538,7 @@ namespace MegaDesk_Wood
 
         private void btnSubmitDisplayQuote_Click(object sender, EventArgs e)
         {
-           
+
             if (custNameValidate() && widthNotEmptyValidate() && depthNotEmptyValidate() && materialValidate() && drawersValidate() && rushOrderShippingValidate())
             {
                 Desk desk = new Desk()
@@ -575,13 +564,13 @@ namespace MegaDesk_Wood
                 DisplayQuote viewQuote = new DisplayQuote(desk, quote);
                 this.Hide();
                 viewQuote.Show();
-            }          
-            
+            }
+
         }
 
         private void AddQuote_Load(object sender, EventArgs e)
         {
-            int [,] rushOrderPrices4Table = DeskQuote.GetRushOrderPrices();
+            int[,] rushOrderPrices4Table = DeskQuote.GetRushOrderPrices();
             label15.Text = "$" + rushOrderPrices4Table[0, 0].ToString();
             label20.Text = "$" + rushOrderPrices4Table[0, 1].ToString();
             label23.Text = "$" + rushOrderPrices4Table[0, 2].ToString();

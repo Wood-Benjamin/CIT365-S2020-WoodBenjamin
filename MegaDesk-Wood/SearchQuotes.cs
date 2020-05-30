@@ -1,14 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace MegaDesk_Wood
 {
@@ -72,7 +68,7 @@ namespace MegaDesk_Wood
             {
                 foreach (DataGridViewRow row in dataGridSearchQuotes.Rows)
                 {
-                    
+
                     if (row.Cells[2].Value.ToString().Equals(searchValue))
                     {
                         CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dataGridSearchQuotes.DataSource];
