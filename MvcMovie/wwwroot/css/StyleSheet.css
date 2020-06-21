@@ -1,0 +1,17 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Cantata+One&family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 125%;
+    font-weight: 500;
+    background-image: url('../img/movie-background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0em !important;
+    color: #dee2e6;
+}
+
+.container, main, .table {
+    color: #dee2e6;
+}
