@@ -16,13 +16,13 @@ namespace MvcMovie.Controllers
     public class MoviesController : Controller
     {
         private readonly MvcMovieContext _context;
-        private readonly IWebHostEnvironment _hostEnvironment;
+        private readonly IWebHostEnvironment he;
 
 
-        public MoviesController(MvcMovieContext context, IWebHostEnvironment hostEnvironment)
+        public MoviesController(MvcMovieContext context, IWebHostEnvironment e)
         {
+            he = e;
             _context = context;
-            _hostEnvironment = hostEnvironment;
         }
 
         // GET: Movies
@@ -95,17 +95,8 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies/Create
-        public IActionResult Create(IFormFile UploadImage, Movie movie)
+        public IActionResult Create()
         {
-            if (UploadImage != null)
-            {
-                //var wwwRootPath = _hostEnvironment.WebRootPath;
-                string fileName = Path.GetFileNameWithoutExtension(movie.UploadImage.FileName);
-                string extension = Path.GetExtension(movie.UploadImage.FileName);
-                movie.UploadPath = fileName = "/uploads/" + fileName + extension;
-                string path = Path.Combine(_hostEnvironment.WebRootPath, "/uploads/", fileName);
-                movie.UploadImage.CopyTo(new FileStream(path, FileMode.Create));
-            }
             return View();
         }
 
@@ -116,13 +107,16 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
 
         //public const String wwwRootPath = WebRootPath;
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating,UploadPath,UploadImage")] Movie movie)
+        public async Task<IActionResult> Create(IFormFile UploadImage, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating,UploadPath")] Movie movie)
         {
+            if (UploadImage != null)
+            {
+                var fileName = Path.Combine(he.WebRootPath, "uploads/",Path.GetFileName(UploadImage.FileName));
+                UploadImage.CopyTo(new FileStream(fileName, FileMode.Create));
+            }
             if (ModelState.IsValid)
             {
-                string fileName = Path.GetFileNameWithoutExtension(movie.UploadImage.FileName);
-                string extension = Path.GetExtension(movie.UploadImage.FileName);
-                movie.UploadPath = fileName = "/uploads/" + fileName + extension;
+                movie.UploadPath = Path.Combine("uploads/", Path.GetFileName(UploadImage.FileName));
 
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
@@ -132,7 +126,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies/Edit/5
-        public async Task<IActionResult> Edit(int? id, IFormFile UploadPath)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -152,17 +146,26 @@ namespace MvcMovie.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating,UploadPath")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating,UploadPath")] Movie movie, IFormFile UploadImage)
         {
             if (id != movie.Id)
             {
                 return NotFound();
             }
 
+            //if (UploadImage != null)
+            //{
+            //    var fileName = Path.Combine(he.WebRootPath, "uploads/", Path.GetFileName(UploadImage.FileName));
+            //    UploadImage.CopyTo(new FileStream(fileName, FileMode.Create));
+            //}
+
             if (ModelState.IsValid)
             {
                 try
                 {
+                    //movie.UploadPath = "";
+                    //movie.UploadPath = Path.Combine("uploads/", Path.GetFileName(UploadImage.FileName));
+
                     _context.Update(movie);
                     await _context.SaveChangesAsync();
                 }
@@ -206,6 +209,11 @@ namespace MvcMovie.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var movie = await _context.Movie.FindAsync(id);
+
+            var UploadedImage = Path.Combine(he.WebRootPath, movie.UploadPath);
+            if (System.IO.File.Exists(UploadedImage))
+                System.IO.File.Delete(UploadedImage);
+
             _context.Movie.Remove(movie);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

@@ -30,11 +30,11 @@ namespace MvcMovie.Models
         [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$"), StringLength(5), Required(ErrorMessage = "A rating is required.")]
         public string Rating { get; set; }
 
-        [Display(Name = "Image Path")]
+        [Display(Name = "Image")]
         public string UploadPath { get; set; }
 
-        [NotMapped]
-        [Display(Name = "Upload Image")]
-        public IFormFile UploadImage { get; set; }
+        //[NotMapped]
+        //[Display(Name = "Upload Image")]
+        //public IFormFile UploadImage { get; set; }
     }
 }

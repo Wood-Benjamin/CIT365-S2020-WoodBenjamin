@@ -41,7 +41,7 @@
             @Html.DisplayFor(model => model.Rating)
         </dd>
         <dt class="col-sm-2">
-            <img src="@Url.Content(Model.UploadPath)" alt="movie image" />
+            <img src="@Url.Content("/" + Model.UploadPath)" alt="movie image" />
         </dt>
     </dl>
 </div>

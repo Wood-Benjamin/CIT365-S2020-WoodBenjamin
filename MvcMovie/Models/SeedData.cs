@@ -30,7 +30,7 @@ namespace MvcMovie.Models
                         Genre = "Adventure/Drama",
                         Price = 2.99M,
                         Rating = "PG",
-                        UploadPath = "/uploads/other-side-heaven.jpg"
+                        UploadPath = "uploads/other-side-heaven.jpg"
                     },
 
                     new Movie
@@ -40,7 +40,7 @@ namespace MvcMovie.Models
                         Genre = "Documentary",
                         Price = 3.99M,
                         Rating = "PG",
-                        UploadPath = "/uploads/meet-the-mormons.jpg"
+                        UploadPath = "uploads/meet-the-mormons.jpg"
                     },
 
                     new Movie
@@ -50,7 +50,7 @@ namespace MvcMovie.Models
                         Genre = "Drama",
                         Price = 3.99M,
                         Rating = "PG",
-                        UploadPath = "/uploads/the-fighting-preacher.jpg"
+                        UploadPath = "uploads/the-fighting-preacher.jpg"
                     },
 
                     new Movie
@@ -60,7 +60,7 @@ namespace MvcMovie.Models
                         Genre = "Drama/Mystery",
                         Price = 1.99M,
                         Rating = "PG-13",
-                        UploadPath = "/uploads/the-cokeville-miracle.jpg"
+                        UploadPath = "uploads/the-cokeville-miracle.jpg"
                     }
                 );
                 context.SaveChanges();
