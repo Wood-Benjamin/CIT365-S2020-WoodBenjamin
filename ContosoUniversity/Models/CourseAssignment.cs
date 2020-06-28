@@ -11,7 +11,9 @@ namespace ContosoUniversity.Models
     {
         public int InstructorID { get; set; }
         public int CourseID { get; set; }
+        [Display(Name = "Instructor Name")]
         public Instructor Instructor { get; set; }
+        [Display(Name = "Course Title")]
         public Course Course { get; set; }
     }
 }

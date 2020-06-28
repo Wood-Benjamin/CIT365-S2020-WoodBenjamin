@@ -4,27 +4,50 @@
     ViewData["Title"] = "Student Body Statistics";
 }
 
-<h2>Student Body Statistics</h2>
+    <div>
+        <h2>Student Body Statistics</h2>
 
-<table>
-    <tr>
-        <th>
-            Enrollment Date
-        </th>
-        <th>
-            Students
-        </th>
-    </tr>
+        <table>
+            <tr>
+                <th>
+                    Enrollment Date
+                </th>
+                <th>
+                    Students
+                </th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentDate)
-            </td>
-            <td>
-                @item.StudentCount
-            </td>
-        </tr>
-    }
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                    </td>
+                    <td>
+                        @item.StudentCount
+                    </td>
+                </tr>
+            }
+        </table>
+    </div><br/>
+    <div>
+        <h2>Site Administrator</h2>
+        <table>
+            <tr>
+                <th>
+                    CIT365:
+                </th>
+                <th>
+                    Benjamin Wood
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Email:
+                </th>
+                <th>
+                    woo17074@byui.edu
+                </th>
+            </tr>
+        </table>
+    </div>
