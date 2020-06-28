@@ -1,0 +1,127 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Cantata+One&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 125%;
+    font-weight: 500;
+    background-image: url('../img/univeristy-background1.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0em !important;
+    color: #dee2e6;
+}
+
+.container, main, .table {
+    color: #dee2e6;
+}
+
+.container a {
+    color: #d9c23f
+}
+
+.table {
+    padding-left: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin-bottom: 1rem !important;
+    background-color: #e3e3e3;
+    opacity: 0.8;
+    padding: 10px;
+    box-shadow: 5px 5px 8px #e0ce70, 10px 10px 8px #e6daa1, 15px 15px 8px #edebdf;
+    color: black;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.jumbotron {
+    flex-flow: row;
+    align-content: center;
+    font-family: 'Merriweather', serif;
+    background-color: #585c59;
+    opacity: 0.8;
+    color: #d9c23f;
+}
+
+#home-row {
+    flex-flow: row nowrap;
+    padding: 2em;
+    align-content: flex-start;
+}
+
+@media (max-width: 800px) {
+    #home-row {
+        flex-flow: row wrap;
+        flex-grow: 1;
+    }
+}
+
+.row {
+    background-color: #585c59;
+    opacity: 0.8;
+}
+
+.transbox {
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+}
+
+#home-col-md-1 {
+    text-align: center;
+    background-image: url('../img/contoso-departments-300x214.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    padding: 1em !important;
+    margin: 0.2em;
+}
+
+#home-col-md-1, h2 p {
+    font-weight: bold;
+    color: black;
+}
+
+#home-col-md-2 {
+    text-align: center;
+    background-image: url('../img/campus-life-300x200.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    padding: 1em !important;
+    margin: 0.2em;
+}
+
+#home-col-md-2, h2 p {
+    font-weight: bold;
+    color: black;
+}
+
+#home-col-md-3 {
+    text-align: center;
+    background-image: url('../img/contoso-athletics-300x214.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    padding: 1em !important;
+    margin: 0.2em;
+}
+
+#home-col-md-3, h2 p {
+    font-weight: bold;
+    color: black;
+}
+
+footer a {
+    color: #d9c23f;
+}
